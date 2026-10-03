@@ -3,407 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <!-- SEO & Human Meta Information -->
-  <title>Kshitij Raj — Esports &amp; Event Operations | Community QA | Project Coordinator</title>
-  <meta name="description" content="Portfolio of Kshitij Raj — BCA Undergraduate with hands-on experience in esports operations, brand activations at The Esports Club, gameplay QA for Free Fire MAX, and project delivery.">
+  <title>Kshitij Raj — Esports &amp; Event Operations | Gameplay QA | Project Coordination</title>
+  <meta name="description" content="Kshitij Raj — Student Brand Ambassador at The Esports Club, Independent Gameplay QA for Free Fire MAX, and BCA undergraduate at Techno International New Town.">
   <meta name="author" content="Kshitij Raj">
-  <meta name="keywords" content="Kshitij Raj, The Esports Club, TEC Spartans, Free Fire MAX QA, Project Coordinator, BCA Kolkata, Techno International New Town">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Kshitij Raj — Esports &amp; Event Operations | Community QA">
-  <meta property="og:description" content="Explore the professional work, live operations, gameplay QA, and tech projects of Kshitij Raj.">
+  <meta property="og:title" content="Kshitij Raj — Portfolio &amp; Resume">
+  <meta property="og:description" content="Esports &amp; Event Operations • Independent Gameplay QA • Project Coordination">
   <meta property="og:type" content="website">
 
-  <!-- Icons -->
+  <!-- Remix Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   
-  <!-- Stylesheet -->
+  <!-- Sleek Dark Stylesheet -->
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
-  <!-- Dynamic Scroll Progress -->
-  <div id="scroll-progress" aria-hidden="true"></div>
-
-  <!-- Ambient Light Background -->
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
-  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
-  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
-
   <!-- ==========================================================================
-       TOP NAVIGATION
+       TOP HEADER
        ========================================================================== -->
-  <header>
-    <nav class="navbar" id="top-navbar" aria-label="Main Navigation">
-      <div class="container nav-inner">
-        
-        <!-- Brand -->
-        <a href="#home" class="nav-brand" aria-label="Kshitij Raj Portfolio">
-          <div class="brand-mark">KR</div>
-          <span>Kshitij <span class="gradient-text">Raj</span></span>
-        </a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand-link">
+        <span>KSHITIJ RAJ</span>
+        <span class="brand-tag">OPS / QA</span>
+      </a>
 
-        <!-- Desktop Links -->
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#certifications" class="nav-link">Certs &amp; Awards</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certs &amp; Awards</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+      </nav>
 
-        <!-- Actions -->
-        <div class="nav-actions">
-          <button class="btn-outline-sm open-resume-btn" aria-label="View Resume / CV">
-            <i class="ri-file-text-line"></i> View CV
-          </button>
-
-          <button id="theme-toggle" aria-label="Toggle theme mode" title="Switch theme">
-            <i class="ri-moon-line" id="theme-icon"></i>
-          </button>
-
-          <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-
+      <div class="header-actions">
+        <button class="btn btn-secondary print-trigger" title="Print or save as PDF">
+          <i class="ri-printer-line"></i> Print CV
+        </button>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <i class="ri-moon-line" id="theme-icon"></i>
+        </button>
       </div>
-    </nav>
-
-    <!-- Mobile Drawer -->
-    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#education" class="nav-link">Education</a>
-      <a href="#certifications" class="nav-link">Certs &amp; Awards</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <button class="btn btn-primary open-resume-btn" style="margin-top: 0.5rem;">
-        <i class="ri-file-text-line"></i> Open Full CV
-      </button>
     </div>
   </header>
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION
+         HERO / EXECUTIVE PROFILE
          ========================================================================== -->
     <section class="hero" id="home">
       <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Hero Intro Column -->
-          <div class="hero-content">
-            <div class="status-badge">
-              <span class="pulse-dot"></span>
-              Available for Operations, QA &amp; Project Roles
-            </div>
-
-            <h1 class="hero-title">
-              Hi, I'm <span class="gradient-text">Kshitij Raj</span>
-            </h1>
-
-            <div class="hero-typed-container">
-              <span class="gradient-text" id="typed-text"></span>
-              <span class="typed-cursor" aria-hidden="true"></span>
-            </div>
-
-            <p class="hero-bio">
-              BCA undergraduate at <strong>Techno International New Town</strong> with hands-on experience in 
-              <strong>esports operations, brand activations, independent gameplay QA, and end-to-end project coordination</strong>. 
-              Proven track record across freelance and academic environments with foundational technical fluency in Python and modern web development.
-            </p>
-
-            <div class="hero-cta">
-              <a href="#experience" class="btn btn-primary">
-                <i class="ri-briefcase-line"></i> View Experience
-              </a>
-              <button class="btn btn-secondary open-resume-btn">
-                <i class="ri-file-user-line"></i> View Full Resume
-              </button>
-              <a href="#contact" class="btn btn-secondary">
-                <i class="ri-mail-send-line"></i> Get in Touch
-              </a>
-            </div>
-
-            <!-- Authentic Quantifiable Numbers -->
-            <div class="hero-stats">
-              <div class="stat-item">
-                <h3 class="stat-number" data-target="15" data-suffix="+ Mos">0</h3>
-                <p>Independent QA Workflow</p>
-              </div>
-              <div class="stat-item">
-                <h3 class="stat-number" data-target="500" data-suffix="+">0</h3>
-                <p>Event Attendees Served</p>
-              </div>
-              <div class="stat-item">
-                <h3 class="stat-number" data-target="100" data-suffix="%">0</h3>
-                <p>On-Time Delivery Rate</p>
-              </div>
-              <div class="stat-item">
-                <h3 class="stat-number" data-target="3" data-suffix="+">0</h3>
-                <p>Core Industry Roles</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hero Overview Card -->
-          <div class="hero-card">
-            
-            <div class="card-profile-header">
-              <div class="card-avatar">KR</div>
-              <div class="card-identity">
-                <h4>Kshitij Raj</h4>
-                <p>Operations &amp; Community Specialist</p>
-                <div style="font-size: 0.8rem; color: var(--brand-emerald); margin-top: 0.2rem; font-weight: 600;">
-                  <i class="ri-checkbox-circle-fill"></i> Active Contributor
-                </div>
-              </div>
-            </div>
-
-            <div class="executive-meta-list">
-              <div class="meta-row">
-                <i class="ri-map-pin-2-line"></i>
-                <span>Location:</span>
-                <strong>Kolkata, West Bengal</strong>
-              </div>
-              <div class="meta-row">
-                <i class="ri-phone-line"></i>
-                <span>Contact:</span>
-                <strong><a href="tel:+919304355202" style="color: inherit;">+91-9304355202</a></strong>
-              </div>
-              <div class="meta-row">
-                <i class="ri-mail-line"></i>
-                <span>Email:</span>
-                <strong><a href="mailto:kshitij.raj.96@gmail.com" style="color: inherit;">kshitij.raj.96@gmail.com</a></strong>
-              </div>
-              <div class="meta-row">
-                <i class="ri-graduation-cap-line"></i>
-                <span>Degree:</span>
-                <strong>BCA (2023–2027)</strong>
-              </div>
-            </div>
-
-            <div class="card-quick-actions">
-              <a href="https://linkedin.com/in/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1;" aria-label="LinkedIn">
-                <i class="ri-linkedin-box-fill" style="color: #0a66c2;"></i> LinkedIn
-              </a>
-              <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1;" aria-label="GitHub">
-                <i class="ri-github-fill"></i> GitHub
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         PROFILE STATEMENT & FOCUS
-         ========================================================================== -->
-    <section class="section-padding" id="about" style="border-top: 1px solid var(--border-subtle);">
-      <div class="container">
         
-        <div class="section-header">
-          <span class="section-kicker"><i class="ri-user-line"></i> Professional Profile</span>
-          <h2 class="section-title">Operational Rigor Meets Execution</h2>
-          <p class="section-desc">
-            Navigating cross-functional event execution, game quality assurance, and project coordination.
-          </p>
+        <div class="hero-header">
+          <h1 class="hero-name">Kshitij <span class="highlight">Raj</span></h1>
+          <div class="hero-role">
+            <span>Student Brand Ambassador</span>
+            <span class="hero-role-dot">•</span>
+            <span>Esports &amp; Event Operations</span>
+            <span class="hero-role-dot">•</span>
+            <span>Community QA</span>
+            <span class="hero-role-dot">•</span>
+            <span>Project Coordination</span>
+          </div>
         </div>
 
-        <div class="about-grid">
-          
-          <!-- Exact Resume Statement -->
-          <div class="card-base profile-statement">
-            <p>
-              I am a <strong>BCA undergraduate</strong> with hands-on experience in <strong>esports operations, brand activations, independent gameplay QA, and end-to-end project coordination</strong>.
-            </p>
-            <p>
-              I have demonstrated the ability to manage cross-functional responsibilities, structured documentation, and delivery timelines across freelance and academic roles. I bring foundational exposure to machine learning and a track record of self-directed learning through industry simulations and certifications.
-            </p>
-            <p>
-              <strong>Career Objective:</strong> Targeting operations, project management, and community roles within digital entertainment and technology companies where attention to detail, proactive risk resolution, and dependable delivery drive outcomes.
-            </p>
+        <p class="hero-bio">
+          <strong>BCA undergraduate</strong> at <strong>Techno International New Town</strong> with hands-on experience in esports operations, brand activations, independent gameplay QA, and end-to-end project coordination. Demonstrated ability to manage cross-functional responsibilities, structured documentation, and delivery timelines across freelance and academic roles. Foundational exposure to machine learning and a track record of self-directed learning through industry simulations and certifications. Targeting operations, project management, and community roles within digital entertainment and technology companies.
+        </p>
 
-            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.5rem;">
-              <span class="btn-outline-sm"><i class="ri-gamepad-line"></i> Esports Ops</span>
-              <span class="btn-outline-sm"><i class="ri-bug-line"></i> QA &amp; Bug Triage</span>
-              <span class="btn-outline-sm"><i class="ri-calendar-check-line"></i> Event Delivery</span>
-              <span class="btn-outline-sm"><i class="ri-team-line"></i> Community Coordination</span>
-            </div>
+        <!-- Direct Contact Bar with 1-Click Copy -->
+        <div class="contact-toolbar">
+          <div class="toolbar-item">
+            <i class="ri-mail-line" style="color: var(--accent-primary);"></i>
+            <span>kshitij.raj.96@gmail.com</span>
+            <button class="copy-btn copy-trigger" data-copy="kshitij.raj.96@gmail.com">Copy</button>
           </div>
-
-          <!-- Core Pillars -->
-          <div class="focus-cards-grid">
-            
-            <div class="focus-card">
-              <div class="focus-icon icon-amber">
-                <i class="ri-trophy-line"></i>
-              </div>
-              <div>
-                <h4>Esports &amp; Event Operations</h4>
-                <p>Executing on-ground &amp; hybrid tournaments, tracking live action items, and ensuring zero operational drop-offs.</p>
-              </div>
-            </div>
-
-            <div class="focus-card">
-              <div class="focus-icon icon-cyan">
-                <i class="ri-shield-check-line"></i>
-              </div>
-              <div>
-                <h4>Independent Gameplay QA</h4>
-                <p>15+ months of self-driven gameplay testing, severity-based bug triage, and structured version-wise escalation.</p>
-              </div>
-            </div>
-
-            <div class="focus-card">
-              <div class="focus-icon icon-indigo">
-                <i class="ri-git-commit-line"></i>
-              </div>
-              <div>
-                <h4>Project Coordination &amp; Web</h4>
-                <p>Delivered the live INCUBES fest platform (300-500 attendees) and conceptualized the NEXUS enterprise workflow platform.</p>
-              </div>
-            </div>
-
+          <div class="toolbar-divider"></div>
+          <div class="toolbar-item">
+            <i class="ri-phone-line" style="color: var(--accent-primary);"></i>
+            <a href="tel:+919304355202" style="color: inherit;">+91-9304355202</a>
           </div>
+          <div class="toolbar-divider"></div>
+          <div class="toolbar-item">
+            <i class="ri-map-pin-line" style="color: var(--accent-primary);"></i>
+            <span>Kolkata, West Bengal</span>
+          </div>
+          <div class="toolbar-divider"></div>
+          <div class="toolbar-item">
+            <span class="badge badge-live">
+              <span class="badge-live-dot"></span>
+              Open to Roles
+            </span>
+          </div>
+        </div>
 
+        <!-- Action Links -->
+        <div class="hero-actions">
+          <a href="mailto:kshitij.raj.96@gmail.com" class="btn btn-primary">
+            <i class="ri-mail-send-line"></i> Email Kshitij
+          </a>
+          <a href="https://linkedin.com/in/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <i class="ri-linkedin-box-line"></i> LinkedIn Profile
+          </a>
+          <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <i class="ri-github-line"></i> GitHub
+          </a>
+          <button class="btn btn-secondary print-trigger">
+            <i class="ri-file-download-line"></i> Download / Print PDF
+          </button>
         </div>
 
       </div>
     </section>
 
     <!-- ==========================================================================
-         PROFESSIONAL EXPERIENCE
+         PROFESSIONAL EXPERIENCE (Chronological)
          ========================================================================== -->
-    <section class="section-padding" id="experience" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-subtle);">
+    <section class="section" id="experience">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-kicker"><i class="ri-history-line"></i> Career Journey</span>
+        <div class="section-head">
           <h2 class="section-title">Professional Experience</h2>
-          <p class="section-desc">
-            Direct responsibility across national esports activations, game QA workflows, and technical internships.
-          </p>
+          <span class="badge">Chronological Order</span>
         </div>
 
-        <div class="experience-list">
+        <div class="entry-list">
           
-          <!-- Experience 1: The Esports Club -->
-          <article class="experience-card">
-            <div class="exp-header">
-              <div class="exp-role-wrap">
-                <h3>Student Brand Ambassador</h3>
-                <div class="exp-company">
+          <!-- Role 1: The Esports Club -->
+          <article class="entry-card">
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-title">Student Brand Ambassador</h3>
+                <div class="entry-subtitle">
                   <span>The Esports Club (TEC) · TEC Spartans</span>
-                  <span class="exp-pill">Bengaluru / Kolkata – Hybrid</span>
-                  <span class="exp-pill">Freelance</span>
+                  <span class="entry-badge">Bengaluru / Kolkata – Hybrid</span>
+                  <span class="entry-badge">Freelance</span>
                 </div>
               </div>
-              <div class="exp-date">
-                <i class="ri-calendar-line"></i> May 2026 – Present
-              </div>
+              <span class="entry-date">May 2026 – Present</span>
             </div>
 
-            <ul class="exp-points">
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Plan and execute regional esports activations end-to-end, managing timelines, stakeholder coordination, and on-ground delivery.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Track action items and deadlines across multiple concurrent event responsibilities, ensuring no task falls through during live operations.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Serve as single point of contact between TEC’s national operations team and local community, managing communication flow and expectation alignment.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Identify operational bottlenecks during event execution and implement real-time workarounds to maintain delivery timelines.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Maintain documentation of regional activities, outcomes, and feedback to support team reviews and future planning.</span>
-              </li>
+            <ul class="entry-bullets">
+              <li>Plan and execute regional esports activations end-to-end, managing timelines, stakeholder coordination, and on-ground delivery.</li>
+              <li>Track action items and deadlines across multiple concurrent event responsibilities, ensuring no task falls through during live operations.</li>
+              <li>Serve as single point of contact between TEC’s national operations team and local community, managing communication flow and expectation alignment.</li>
+              <li>Identify operational bottlenecks during event execution and implement real-time workarounds to maintain delivery timelines.</li>
+              <li>Maintain documentation of regional activities, outcomes, and feedback to support team reviews and future planning.</li>
             </ul>
           </article>
 
-          <!-- Experience 2: Free Fire MAX India -->
-          <article class="experience-card">
-            <div class="exp-header">
-              <div class="exp-role-wrap">
-                <h3>Independent Gameplay QA &amp; Community Feedback Contributor</h3>
-                <div class="exp-company">
+          <!-- Role 2: Free Fire MAX India -->
+          <article class="entry-card">
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-title">Independent Gameplay QA &amp; Community Feedback Contributor</h3>
+                <div class="entry-subtitle">
                   <span>Free Fire MAX India</span>
-                  <span class="exp-pill">Independent</span>
+                  <span class="entry-badge">Independent</span>
                 </div>
               </div>
-              <div class="exp-date">
-                <i class="ri-calendar-line"></i> May 2025 – Present
-              </div>
+              <span class="entry-date">May 2025 – Present</span>
             </div>
 
-            <ul class="exp-points">
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Managed an independent QA workflow over 15+ months — self-assigned testing cycles, structured documentation, and tracked issue resolution across game releases.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Prioritized bug reports by severity and user impact, applying a structured triage process to direct attention toward high-priority issues first.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Maintained version-wise records of reported issues to monitor resolution status, identify recurring defects, and measure platform improvement over time.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Operated without supervision across the full reporting lifecycle — from issue discovery and documentation through escalation and follow-up.</span>
-              </li>
+            <ul class="entry-bullets">
+              <li>Managed an independent QA workflow over 15+ months — self-assigned testing cycles, structured documentation, and tracked issue resolution across game releases.</li>
+              <li>Prioritized bug reports by severity and user impact, applying a structured triage process to direct attention toward high-priority issues first.</li>
+              <li>Maintained version-wise records of reported issues to monitor resolution status, identify recurring defects, and measure platform improvement over time.</li>
+              <li>Operated without supervision across the full reporting lifecycle — from issue discovery and documentation through escalation and follow-up.</li>
             </ul>
           </article>
 
-          <!-- Experience 3: Euphoria GenX -->
-          <article class="experience-card">
-            <div class="exp-header">
-              <div class="exp-role-wrap">
-                <h3>Intern — Machine Learning using Python</h3>
-                <div class="exp-company">
-                  <span>Euphoria GenX</span>
-                  <span class="exp-pill">ISO 9001:2015 Certified</span>
-                  <span class="exp-pill">Remote · Techno India College of Technology</span>
+          <!-- Role 3: Euphoria GenX -->
+          <article class="entry-card">
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-title">Intern — Machine Learning using Python</h3>
+                <div class="entry-subtitle">
+                  <span>Euphoria GenX · Techno India College of Technology</span>
+                  <span class="entry-badge">ISO 9001:2015 Certified</span>
+                  <span class="entry-badge">Remote</span>
                 </div>
               </div>
-              <div class="exp-date">
-                <i class="ri-calendar-line"></i> Jul 2025 – Sep 2025
-              </div>
+              <span class="entry-date">Jul 2025 – Sep 2025</span>
             </div>
 
-            <ul class="exp-points">
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Completed a structured ML internship working on an AI Financial Market Data Project using Python.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Applied Python-based tools to process and analyze financial market datasets as part of a defined project deliverable.</span>
-              </li>
-              <li>
-                <i class="ri-arrow-right-s-line"></i>
-                <span>Gained exposure to ML workflows, data preprocessing, and model training within a supervised project structure.</span>
-              </li>
+            <ul class="entry-bullets">
+              <li>Completed a structured ML internship working on an AI Financial Market Data Project using Python.</li>
+              <li>Applied Python-based tools to process and analyze financial market datasets as part of a defined project deliverable.</li>
+              <li>Gained exposure to ML workflows, data preprocessing, and model training within a supervised project structure.</li>
             </ul>
           </article>
 
@@ -413,118 +206,72 @@
     </section>
 
     <!-- ==========================================================================
-         FEATURED PROJECTS
+         PROJECTS & WORKFLOW SYSTEMS
          ========================================================================== -->
-    <section class="section-padding" id="projects" style="border-top: 1px solid var(--border-subtle);">
+    <section class="section" id="projects">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-kicker"><i class="ri-code-box-line"></i> Portfolio Showcase</span>
-          <h2 class="section-title">Projects &amp; Systems Delivered</h2>
-          <p class="section-desc">
-            Product designs and production web deployments built to solve real operational and community challenges.
-          </p>
+        <div class="section-head">
+          <h2 class="section-title">Projects &amp; Deliveries</h2>
+          <span class="badge">Live &amp; Conceptualized</span>
         </div>
 
-        <div class="project-cards-grid">
-          
-          <!-- Project 1: NEXUS -->
-          <article class="featured-project-card">
+        <!-- Project 1: INCUBES -->
+        <article class="project-entry">
+          <div class="project-head">
             <div>
-              <div class="project-top-meta">
-                <span class="project-category-badge">Product Design</span>
-                <span class="project-year">2025 – 2026</span>
-              </div>
-              <h3>NEXUS — Project &amp; Workflow Management Platform</h3>
-              <p class="project-summary-text">
-                Centralized platform conceptualized to bring task tracking, team collaboration, structured documentation, and workflow automation into a unified interface.
+              <h3 class="project-name">INCUBES — Inter-College Event Website</h3>
+              <p style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600; margin-top: 0.2rem;">
+                Official College Fest Platform · tint.edu.in/incubes · 2024
               </p>
-              
-              <ul class="project-key-bullets">
-                <li>
-                  <i class="ri-checkbox-circle-fill"></i>
-                  <span>Defined automation features: deadline reminders, approval escalation, recurring tasks, risk alerts, and automated status updates.</span>
-                </li>
-                <li>
-                  <i class="ri-checkbox-circle-fill"></i>
-                  <span>Planned integration architecture for Google Calendar, Gmail, Slack, GitHub, and Google Drive with webhook extensibility.</span>
-                </li>
-                <li>
-                  <i class="ri-checkbox-circle-fill"></i>
-                  <span>Developed product requirements, feature prioritization framework, and phased deployment roadmap for enterprise use cases.</span>
-                </li>
-              </ul>
             </div>
+            <a href="https://tint.edu.in/incubes" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.8rem;">
+              <i class="ri-external-link-line"></i> tint.edu.in/incubes
+            </a>
+          </div>
 
+          <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>300–500 Attendees</span>
+            <span>Live Production</span>
+          </div>
+
+          <ul class="entry-bullets">
+            <li>Led end-to-end project delivery for a live college event website — from requirement gathering and planning through development, testing, and launch for a fest with 300–500 attendees.</li>
+            <li>Defined project scope, assigned responsibilities across the team, and monitored progress against a fixed event deadline.</li>
+            <li>Managed competing priorities between technical development and coordination tasks, delivering on time with no scope reduction; site remains live at <a href="https://tint.edu.in/incubes" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">tint.edu.in/incubes</a>.</li>
+          </ul>
+        </article>
+
+        <!-- Project 2: NEXUS -->
+        <article class="project-entry">
+          <div class="project-head">
             <div>
-              <div class="project-tag-chips">
-                <span>Project Management</span>
-                <span>Workflow Automation</span>
-                <span>Analytics</span>
-                <span>Integrations</span>
-                <span>System Architecture</span>
-              </div>
-
-              <div class="project-card-actions">
-                <button class="btn btn-secondary view-project-modal-btn" data-project="nexus">
-                  <i class="ri-eye-line"></i> Deep Dive Case Study
-                </button>
-                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub">
-                  <i class="ri-github-line"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: INCUBES -->
-          <article class="featured-project-card">
-            <div>
-              <div class="project-top-meta">
-                <span class="project-category-badge" style="color: var(--brand-emerald);">Live Event Website</span>
-                <span class="project-year">2024</span>
-              </div>
-              <h3>INCUBES — Inter-College Event Website</h3>
-              <p class="project-summary-text">
-                Official web portal built and delivered end-to-end for a major inter-college fest with 300–500 attendees at Techno International New Town.
+              <h3 class="project-name">NEXUS — Project &amp; Workflow Management Platform</h3>
+              <p style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600; margin-top: 0.2rem;">
+                Product Design · 2025–2026
               </p>
-
-              <ul class="project-key-bullets">
-                <li>
-                  <i class="ri-checkbox-circle-fill" style="color: var(--brand-emerald);"></i>
-                  <span>Led end-to-end project delivery from requirement gathering and planning through development, testing, and launch.</span>
-                </li>
-                <li>
-                  <i class="ri-checkbox-circle-fill" style="color: var(--brand-emerald);"></i>
-                  <span>Defined project scope, assigned responsibilities across the team, and monitored progress against a fixed event deadline.</span>
-                </li>
-                <li>
-                  <i class="ri-checkbox-circle-fill" style="color: var(--brand-emerald);"></i>
-                  <span>Managed competing priorities between technical development and coordination tasks, delivering on time with zero scope reduction.</span>
-                </li>
-              </ul>
             </div>
+            <span class="entry-date">System Architecture</span>
+          </div>
 
-            <div>
-              <div class="project-tag-chips">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>Live Production</span>
-                <span>300–500 Attendees</span>
-              </div>
+          <div class="project-tags">
+            <span>Project Management</span>
+            <span>Workflow Automation</span>
+            <span>Analytics</span>
+            <span>Integrations</span>
+            <span>Enterprise Roadmap</span>
+          </div>
 
-              <div class="project-card-actions">
-                <a href="https://tint.edu.in/incubes" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                  <i class="ri-external-link-line"></i> Visit Live Website
-                </a>
-                <button class="btn btn-secondary view-project-modal-btn" data-project="incubes">
-                  <i class="ri-eye-line"></i> View Details
-                </button>
-              </div>
-            </div>
-          </article>
-
-        </div>
+          <ul class="entry-bullets">
+            <li>Conceptualized and designed a project management platform to centralize task tracking, collaboration, documentation, and workflow automation.</li>
+            <li>Defined automation features: deadline reminders, approval escalation, recurring tasks, risk alerts, and automated status updates.</li>
+            <li>Planned integration architecture for Google Calendar, Gmail, Slack, GitHub, and Google Drive with webhook extensibility.</li>
+            <li>Developed product requirements, feature prioritization framework, and phased deployment roadmap for enterprise use cases.</li>
+          </ul>
+        </article>
 
       </div>
     </section>
@@ -532,125 +279,83 @@
     <!-- ==========================================================================
          SKILLS MATRIX
          ========================================================================== -->
-    <section class="section-padding" id="skills" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-subtle);">
+    <section class="section" id="skills">
       <div class="container">
         
-        <div class="section-header text-center">
-          <span class="section-kicker"><i class="ri-tools-line"></i> Capabilities</span>
-          <h2 class="section-title">Core Skills &amp; Competencies</h2>
-          <p class="section-desc">
-            Organized across operational delivery, quality assurance, and hands-on technical proficiencies.
-          </p>
+        <div class="section-head">
+          <h2 class="section-title">Skills &amp; Capabilities</h2>
+          <span class="badge">Core Competencies</span>
         </div>
 
         <div class="skills-grid">
           
-          <!-- Block 1: Project & Event Management -->
-          <div class="skill-block">
-            <div class="skill-block-header">
-              <div class="skill-block-icon icon-amber">
-                <i class="ri-calendar-event-line"></i>
-              </div>
-              <div>
-                <h3>Project &amp; Event Management</h3>
-                <span style="font-size: 0.8rem; color: var(--text-muted);">Execution &amp; Delivery</span>
-              </div>
-            </div>
-
-            <ul class="skill-item-list">
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+          <!-- Category 1 -->
+          <div class="skill-box">
+            <h3 class="skill-box-title">Project &amp; Event Management</h3>
+            <div class="skill-tag-list">
+              <div class="skill-tag-item">
                 <span>End-to-end project delivery</span>
-                <span class="skill-proficiency">Core</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Demonstrated</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Timeline &amp; deadline management</span>
-                <span class="skill-proficiency">Core</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Demonstrated</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Stakeholder coordination</span>
-                <span class="skill-proficiency">Active</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Active</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Risk identification &amp; resolution</span>
-                <span class="skill-proficiency">Trained</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Block 2: QA & Community Operations -->
-          <div class="skill-block">
-            <div class="skill-block-header">
-              <div class="skill-block-icon icon-cyan">
-                <i class="ri-gamepad-line"></i>
-              </div>
-              <div>
-                <h3>QA &amp; Community Operations</h3>
-                <span style="font-size: 0.8rem; color: var(--text-muted);">Gaming &amp; User Feedback</span>
+                <span class="skill-level">Active</span>
               </div>
             </div>
+          </div>
 
-            <ul class="skill-item-list">
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+          <!-- Category 2 -->
+          <div class="skill-box">
+            <h3 class="skill-box-title">QA &amp; Community Operations</h3>
+            <div class="skill-tag-list">
+              <div class="skill-tag-item">
                 <span>Gameplay testing &amp; bug triage</span>
-                <span class="skill-proficiency">15+ Mos</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">15+ Months</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>UX &amp; player feedback analysis</span>
-                <span class="skill-proficiency">Core</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Active</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Issue documentation &amp; escalation</span>
-                <span class="skill-proficiency">Specialist</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Specialist</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Community coordination</span>
-                <span class="skill-proficiency">Active</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Block 3: Technical Skills -->
-          <div class="skill-block">
-            <div class="skill-block-header">
-              <div class="skill-block-icon icon-indigo">
-                <i class="ri-terminal-window-line"></i>
-              </div>
-              <div>
-                <h3>Technical &amp; Web</h3>
-                <span style="font-size: 0.8rem; color: var(--text-muted);">Development &amp; Data</span>
+                <span class="skill-level">Active</span>
               </div>
             </div>
+          </div>
 
-            <ul class="skill-item-list">
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+          <!-- Category 3 -->
+          <div class="skill-box">
+            <h3 class="skill-box-title">Technical</h3>
+            <div class="skill-tag-list">
+              <div class="skill-tag-item">
                 <span>HTML, CSS, JS</span>
-                <span class="skill-proficiency">Working</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Working knowledge</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Python</span>
-                <span class="skill-proficiency">Working</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Working knowledge</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Machine Learning</span>
-                <span class="skill-proficiency">Foundational</span>
-              </li>
-              <li class="skill-item-row">
-                <i class="ri-checkbox-circle-line"></i>
+                <span class="skill-level">Foundational</span>
+              </div>
+              <div class="skill-tag-item">
                 <span>Responsive web design</span>
-                <span class="skill-proficiency">Proficient</span>
-              </li>
-            </ul>
+                <span class="skill-level">Proficient</span>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -659,156 +364,167 @@
     </section>
 
     <!-- ==========================================================================
-         EDUCATION SECTION
+         EDUCATION & CERTIFICATIONS
          ========================================================================== -->
-    <section class="section-padding" id="education" style="border-top: 1px solid var(--border-subtle);">
+    <section class="section" id="education">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-kicker"><i class="ri-graduation-cap-line"></i> Academic Credentials</span>
-          <h2 class="section-title">Education Background</h2>
-          <p class="section-desc">
-            Formal computer application studies and secondary school credentials.
-          </p>
-        </div>
-
-        <div class="timeline-block">
+        <div class="dual-column">
           
-          <!-- Higher Education -->
-          <div class="edu-card">
-            <div class="edu-header">
-              <h4>Bachelor of Computer Applications (BCA)</h4>
-              <span class="edu-year">2023 – 2027 (Expected)</span>
-            </div>
-            <div class="edu-school">Techno International New Town, Kolkata</div>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55;">
-              Undergraduate program emphasizing data structures, database administration, software lifecycle management, and web programming, paired with active involvement in inter-college tech events and student initiatives.
-            </p>
-          </div>
-
-          <!-- Class XII -->
-          <div class="edu-card">
-            <div class="edu-header">
-              <h4>Class XII — Senior Secondary</h4>
-              <span class="edu-year">2023</span>
-            </div>
-            <div class="edu-school">Swarajaya Senior Secondary School, Alwar · NWAC Board</div>
-            <div class="edu-badge-score">Academic Score: 78%</div>
-          </div>
-
-          <!-- Class X -->
-          <div class="edu-card">
-            <div class="edu-header">
-              <h4>Class X — Secondary School</h4>
-              <span class="edu-year">2021</span>
-            </div>
-            <div class="edu-school">De Nobili School, Chandrapura · ICSE Board</div>
-            <div class="edu-badge-score">Academic Score: 78%</div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         CERTIFICATIONS, ACHIEVEMENTS & LANGUAGES
-         ========================================================================== -->
-    <section class="section-padding" id="certifications" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-subtle);">
-      <div class="container">
-        
-        <div class="two-column-layout">
-          
-          <!-- Column 1: Certifications & Training -->
+          <!-- Education Column -->
           <div>
-            <div class="section-header" style="margin-bottom: 2rem;">
-              <span class="section-kicker"><i class="ri-award-line"></i> Continuous Learning</span>
-              <h2 class="section-title" style="font-size: 1.85rem;">Certifications &amp; Training</h2>
+            <div class="section-head" style="margin-bottom: 1.5rem;">
+              <h2 class="section-title">Education</h2>
             </div>
 
-            <!-- Cert 1 -->
-            <div class="cert-item">
-              <div class="cert-icon">
-                <i class="ri-briefcase-4-line"></i>
+            <div class="item-row">
+              <div class="item-row-head">
+                <h4>Bachelor of Computer Applications (BCA)</h4>
+                <span class="entry-date">2023 – 2027 (Expected)</span>
               </div>
-              <div class="cert-content">
-                <h4>Accenture North America — Project Management Job Simulation</h4>
-                <p><strong>Forage · Nov 2024</strong><br>Completed end-to-end PM simulation covering project planning, stakeholder communication, and delivery tracking.</p>
-              </div>
+              <div class="item-row-meta">Techno International New Town, Kolkata</div>
+              <p>Undergraduate coursework in Data Structures, Database Systems, Computer Networks, and Web Technologies.</p>
             </div>
 
-            <!-- Cert 2 -->
-            <div class="cert-item">
-              <div class="cert-icon" style="background: rgba(16, 185, 129, 0.12); color: var(--brand-emerald);">
-                <i class="ri-calculator-line"></i>
+            <div class="item-row">
+              <div class="item-row-head">
+                <h4>Class XII — Senior Secondary</h4>
+                <span class="entry-date">2023</span>
               </div>
-              <div class="cert-content">
+              <div class="item-row-meta">Swarajaya Senior Secondary School, Alwar · NWAC Board</div>
+              <p>Academic Score: <strong>78%</strong></p>
+            </div>
+
+            <div class="item-row">
+              <div class="item-row-head">
+                <h4>Class X — Secondary School</h4>
+                <span class="entry-date">2021</span>
+              </div>
+              <div class="item-row-meta">De Nobili School, Chandrapura · ICSE Board</div>
+              <p>Academic Score: <strong>78%</strong></p>
+            </div>
+          </div>
+
+          <!-- Certifications & Training Column -->
+          <div id="certifications">
+            <div class="section-head" style="margin-bottom: 1.5rem;">
+              <h2 class="section-title">Certifications &amp; Training</h2>
+            </div>
+
+            <div class="item-row">
+              <div class="item-row-head">
+                <h4>Accenture North America — Project Management Simulation</h4>
+                <span class="entry-date">Nov 2024</span>
+              </div>
+              <div class="item-row-meta">Forage</div>
+              <p>Completed end-to-end PM simulation covering project planning, stakeholder communication, and delivery tracking.</p>
+            </div>
+
+            <div class="item-row">
+              <div class="item-row-head">
                 <h4>GMAT Focus — Quantitative Master Math Course</h4>
-                <p><strong>Udemy · May 2026</strong><br>Quantitative reasoning and analytical problem-solving.</p>
+                <span class="entry-date">May 2026</span>
               </div>
+              <div class="item-row-meta">Udemy</div>
+              <p>Quantitative reasoning, logic modeling, and analytical problem-solving.</p>
             </div>
 
-            <!-- Cert 3 -->
-            <div class="cert-item">
-              <div class="cert-icon" style="background: rgba(56, 189, 248, 0.12); color: var(--brand-cyan);">
-                <i class="ri-code-line"></i>
+            <div class="item-row">
+              <div class="item-row-head">
+                <h4>Courses in Python, CSS &amp; JavaScript</h4>
+                <span class="entry-date">2024</span>
               </div>
-              <div class="cert-content">
-                <h4>Complete Courses in Python, CSS &amp; JavaScript</h4>
-                <p><strong>Udemy · 2024</strong><br>Dedicated modular training in Python logic, CSS layouts, and modern ES6+ JavaScript.</p>
-              </div>
+              <div class="item-row-meta">Udemy</div>
+              <p>Comprehensive modular coursework in Python foundations, modern CSS layout architectures, and ES6+ JavaScript.</p>
             </div>
           </div>
 
-          <!-- Column 2: Achievements & Languages -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ACHIEVEMENTS & LANGUAGES
+         ========================================================================== -->
+    <section class="section">
+      <div class="container">
+        
+        <div class="dual-column">
+          
+          <!-- Achievements -->
           <div>
-            <div class="section-header" style="margin-bottom: 2rem;">
-              <span class="section-kicker"><i class="ri-medal-line"></i> Honors &amp; Workshops</span>
-              <h2 class="section-title" style="font-size: 1.85rem;">Achievements &amp; Recognition</h2>
+            <div class="section-head" style="margin-bottom: 1.5rem;">
+              <h2 class="section-title">Achievements &amp; Recognition</h2>
             </div>
 
-            <div class="achievement-row">
-              <div class="achieve-info">
+            <div class="item-row">
+              <div class="item-row-head">
                 <h4>Remarkable Performance — AI vs Human Debate Contest</h4>
-                <p>Demonstrated critical thinking and argument structuring under pressure.</p>
+                <span class="entry-date">Dec 2025</span>
               </div>
-              <span class="achieve-year">Dec 2025</span>
+              <p>Recognized for critical thinking and articulate argument under pressure.</p>
             </div>
 
-            <div class="achievement-row">
-              <div class="achieve-info">
+            <div class="item-row">
+              <div class="item-row-head">
                 <h4>Tech-A-Thon Participation — PRABUDDHA 2026</h4>
-                <p>Inter-college technical competition focusing on applied engineering.</p>
+                <span class="entry-date">Apr 2026</span>
               </div>
-              <span class="achieve-year">Apr 2026</span>
+              <p>Inter-college technical competition focusing on collaborative problem solving.</p>
             </div>
 
-            <div class="achievement-row">
-              <div class="achieve-info">
+            <div class="item-row">
+              <div class="item-row-head">
                 <h4>Kolkata Entrepreneurship Workshop</h4>
-                <p>Intensive workshop covering startup ops, unit economics, and team building.</p>
+                <span class="entry-date">Jan 2026</span>
               </div>
-              <span class="achieve-year">Jan 2026</span>
+              <p>Industry workshop covering startup operations and team management.</p>
             </div>
 
-            <div class="achievement-row">
-              <div class="achieve-info">
+            <div class="item-row">
+              <div class="item-row-head">
                 <h4>Blockchain Technology Workshop</h4>
-                <p>Two-day industry workshop covering blockchain fundamentals and consensus protocols.</p>
+                <span class="entry-date">Jun 2024</span>
               </div>
-              <span class="achieve-year">Jun 2024</span>
+              <p>Two-day industry workshop covering blockchain architecture and consensus protocols.</p>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div>
+            <div class="section-head" style="margin-bottom: 1.5rem;">
+              <h2 class="section-title">Languages</h2>
             </div>
 
-            <!-- Languages -->
-            <div style="margin-top: 2rem;">
-              <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.85rem;">Language Proficiencies</h4>
-              <div class="lang-badge-wrap">
-                <span class="lang-pill"><i class="ri-translate-2"></i> English <strong>(Proficient)</strong></span>
-                <span class="lang-pill"><i class="ri-translate-2"></i> Hindi <strong>(Native)</strong></span>
-                <span class="lang-pill"><i class="ri-translate-2"></i> Bengali <strong>(Basic)</strong></span>
+            <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">
+              Effective cross-cultural and regional communication across teams and gaming communities:
+            </p>
+
+            <div class="lang-chips">
+              <div class="lang-chip">
+                <span>English:</span>
+                <strong>Proficient</strong>
+              </div>
+              <div class="lang-chip">
+                <span>Hindi:</span>
+                <strong>Native</strong>
+              </div>
+              <div class="lang-chip">
+                <span>Bengali:</span>
+                <strong>Basic</strong>
               </div>
             </div>
 
+            <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+              <h4 style="margin-bottom: 0.5rem; font-size: 1.05rem;">Looking for verified credentials?</h4>
+              <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">
+                You can save a clean, high-resolution PDF version of this resume formatted specifically for hiring managers and recruiters.
+              </p>
+              <button class="btn btn-secondary print-trigger">
+                <i class="ri-printer-line"></i> Print / Save PDF
+              </button>
+            </div>
           </div>
 
         </div>
@@ -819,87 +535,93 @@
     <!-- ==========================================================================
          CONTACT SECTION
          ========================================================================== -->
-    <section class="section-padding" id="contact" style="border-top: 1px solid var(--border-subtle);">
+    <section class="section" id="contact">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-kicker"><i class="ri-chat-3-line"></i> Connect</span>
-          <h2 class="section-title">Initiate a Conversation</h2>
-          <p class="section-desc">
-            Currently open to opportunities in esports operations, community management, gameplay QA, and project coordination.
-          </p>
+        <div class="section-head">
+          <h2 class="section-title">Get In Touch</h2>
+          <span class="badge">Direct Communication</span>
         </div>
 
-        <div class="contact-section-grid">
+        <div class="contact-layout">
           
-          <!-- Contact Cards -->
-          <div class="contact-cards-stack">
+          <!-- Contact Options -->
+          <div class="contact-info-list">
             
-            <a href="mailto:kshitij.raj.96@gmail.com" class="direct-contact-card">
-              <div class="direct-icon">
+            <div class="contact-method">
+              <div class="contact-method-icon">
                 <i class="ri-mail-line"></i>
               </div>
-              <div class="direct-meta">
-                <span>Direct Email</span>
+              <div class="contact-method-meta">
+                <span>Email Address</span>
                 <p>kshitij.raj.96@gmail.com</p>
               </div>
-            </a>
+              <button class="copy-btn copy-trigger" data-copy="kshitij.raj.96@gmail.com" style="margin-left: auto;">Copy</button>
+            </div>
 
-            <a href="tel:+919304355202" class="direct-contact-card">
-              <div class="direct-icon">
+            <div class="contact-method">
+              <div class="contact-method-icon">
                 <i class="ri-phone-line"></i>
               </div>
-              <div class="direct-meta">
+              <div class="contact-method-meta">
                 <span>Phone / WhatsApp</span>
-                <p>+91-9304355202</p>
+                <p><a href="tel:+919304355202" style="color: inherit;">+91-9304355202</a></p>
               </div>
-            </a>
+            </div>
 
-            <div class="direct-contact-card">
-              <div class="direct-icon">
+            <div class="contact-method">
+              <div class="contact-method-icon">
                 <i class="ri-map-pin-line"></i>
               </div>
-              <div class="direct-meta">
+              <div class="contact-method-meta">
                 <span>Current Location</span>
                 <p>Kolkata, West Bengal, India</p>
               </div>
             </div>
 
-            <div style="padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
-              <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; display: block; margin-bottom: 0.75rem;">Verified Online Profiles</span>
-              <div style="display: flex; gap: 0.75rem;">
-                <a href="https://linkedin.com/in/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1;">
-                  <i class="ri-linkedin-box-fill" style="color: #0a66c2;"></i> LinkedIn
-                </a>
-                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1;">
-                  <i class="ri-github-fill"></i> GitHub
-                </a>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <i class="ri-linkedin-box-line"></i>
+              </div>
+              <div class="contact-method-meta">
+                <span>LinkedIn</span>
+                <p><a href="https://linkedin.com/in/imkshitijraj" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">linkedin.com/in/imkshitijraj ↗</a></p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <i class="ri-github-line"></i>
+              </div>
+              <div class="contact-method-meta">
+                <span>GitHub</span>
+                <p><a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">github.com/imkshitijraj ↗</a></p>
               </div>
             </div>
 
           </div>
 
-          <!-- Contact Form -->
-          <form class="human-form" id="contact-form" novalidate>
+          <!-- Direct Form -->
+          <form class="contact-form" id="contact-form" novalidate>
             <div id="form-alert" class="form-alert" role="alert"></div>
 
-            <div class="form-field">
+            <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+              <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex" required>
             </div>
 
-            <div class="form-field">
+            <div class="form-group">
               <label for="email">Your Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="e.g. rahul@company.com" required>
+              <input type="email" id="email" name="email" class="form-input" placeholder="e.g. alex@company.com" required>
             </div>
 
-            <div class="form-field">
-              <label for="message">Message or Role Details</label>
-              <textarea id="message" name="message" class="form-input" placeholder="Hi Kshitij, I came across your work in esports ops and game QA..." required></textarea>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-input" placeholder="Type your message here..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
-              <i class="ri-send-plane-2-line"></i> Send Direct Message
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Message
             </button>
           </form>
 
@@ -912,255 +634,21 @@
   <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
-  <footer class="footer">
-    <div class="container footer-row">
-      <div class="footer-copy">
-        &copy; 2026 Kshitij Raj. All rights reserved.
-      </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Kshitij Raj. All rights reserved.</span>
       <ul class="footer-nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </footer>
 
-  <!-- ==========================================================================
-       PROJECT CASE STUDY MODAL
-       ========================================================================== -->
-  <div class="resume-modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="card-base" style="width: 100%; max-width: 650px; max-height: 85vh; overflow-y: auto; position: relative;">
-      <button id="project-modal-close" class="btn-icon" style="position: absolute; top: 1.25rem; right: 1.25rem;" aria-label="Close dialog">
-        <i class="ri-close-line"></i>
-      </button>
-      <div id="project-modal-content">
-        <!-- Injected via JavaScript -->
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       FULL RESUME / CV VIEWER MODAL
-       ========================================================================== -->
-  <div class="resume-modal-overlay" id="resume-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="resume-modal-paper">
-      
-      <!-- Top Bar with Print/Save Button -->
-      <div class="resume-modal-bar">
-        <span style="font-weight: 700; font-size: 0.95rem;">Curriculum Vitae — Kshitij Raj</span>
-        <div style="display: flex; gap: 0.65rem;">
-          <button id="resume-modal-print" class="btn-outline-sm" title="Print or save as PDF">
-            <i class="ri-printer-line"></i> Print / PDF
-          </button>
-          <button id="resume-modal-close" class="btn-icon" aria-label="Close Resume">
-            <i class="ri-close-line"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Printable Resume Paper Body -->
-      <div class="resume-modal-content">
-        
-        <header class="resume-paper-header">
-          <h1>KSHITIJ RAJ</h1>
-          <p>Student Brand Ambassador • Esports &amp; Event Operations • Community QA • Project Coordination</p>
-          <div class="resume-paper-contact">
-            <span>+91-9304355202</span>
-            <span>│</span>
-            <span>kshitij.raj.96@gmail.com</span>
-            <span>│</span>
-            <span>Kolkata, West Bengal</span>
-          </div>
-          <div class="resume-paper-contact" style="margin-top: 0.35rem;">
-            <span>linkedin.com/in/imkshitijraj</span>
-            <span>│</span>
-            <span>github.com/imkshitijraj</span>
-          </div>
-        </header>
-
-        <!-- Profile -->
-        <section>
-          <div class="resume-section-title">PROFILE</div>
-          <p>
-            BCA undergraduate with hands-on experience in esports operations, brand activations, independent gameplay QA, and end-to-end project coordination. Demonstrated ability to manage cross-functional responsibilities, structured documentation, and delivery timelines across freelance and academic roles. Foundational exposure to machine learning and a track record of self-directed learning through industry simulations and certifications. Targeting operations, project management, and community roles within digital entertainment and technology companies.
-          </p>
-        </section>
-
-        <!-- Skills -->
-        <section>
-          <div class="resume-section-title">SKILLS</div>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem;">
-            <div>
-              <strong style="color: var(--text-primary); display: block; margin-bottom: 0.35rem;">Project &amp; Event Management</strong>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.88rem; color: var(--text-secondary);">
-                <li>▸ End-to-end project delivery</li>
-                <li>▸ Timeline &amp; deadline management</li>
-                <li>▸ Stakeholder coordination</li>
-                <li>▸ Risk identification &amp; resolution</li>
-              </ul>
-            </div>
-            <div>
-              <strong style="color: var(--text-primary); display: block; margin-bottom: 0.35rem;">QA &amp; Community Operations</strong>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.88rem; color: var(--text-secondary);">
-                <li>▸ Gameplay testing &amp; bug triage</li>
-                <li>▸ UX &amp; player feedback analysis</li>
-                <li>▸ Issue documentation &amp; escalation</li>
-                <li>▸ Community coordination</li>
-              </ul>
-            </div>
-            <div>
-              <strong style="color: var(--text-primary); display: block; margin-bottom: 0.35rem;">Technical</strong>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.88rem; color: var(--text-secondary);">
-                <li>▸ HTML, CSS, JS — Working knowledge</li>
-                <li>▸ Python — Working knowledge</li>
-                <li>▸ Machine Learning — Foundational</li>
-                <li>▸ Responsive web design</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- Experience -->
-        <section>
-          <div class="resume-section-title">PROFESSIONAL EXPERIENCE</div>
-
-          <div style="margin-bottom: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0.2rem;">
-              <span>Student Brand Ambassador</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem;">May 2026 – Present</span>
-            </div>
-            <div style="color: var(--brand-cyan); font-size: 0.88rem; margin-bottom: 0.5rem;">
-              The Esports Club (TEC) · TEC Spartans · Bengaluru / Kolkata – Hybrid · Freelance
-            </div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.88rem; color: var(--text-secondary);">
-              <li>▸ Plan and execute regional esports activations end-to-end, managing timelines, stakeholder coordination, and on-ground delivery</li>
-              <li>▸ Track action items and deadlines across multiple concurrent event responsibilities, ensuring no task falls through during live operations</li>
-              <li>▸ Serve as single point of contact between TEC’s national operations team and local community, managing communication flow and expectation alignment</li>
-              <li>▸ Identify operational bottlenecks during event execution and implement real-time workarounds to maintain delivery timelines</li>
-              <li>▸ Maintain documentation of regional activities, outcomes, and feedback to support team reviews and future planning</li>
-            </ul>
-          </div>
-
-          <div style="margin-bottom: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0.2rem;">
-              <span>Independent Gameplay QA &amp; Community Feedback Contributor</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem;">May 2025 – Present</span>
-            </div>
-            <div style="color: var(--brand-cyan); font-size: 0.88rem; margin-bottom: 0.5rem;">
-              Free Fire MAX India · Independent
-            </div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.88rem; color: var(--text-secondary);">
-              <li>▸ Managed an independent QA workflow over 15+ months — self-assigned testing cycles, structured documentation, and tracked issue resolution across game releases</li>
-              <li>▸ Prioritized bug reports by severity and user impact, applying a structured triage process to direct attention toward high-priority issues first</li>
-              <li>▸ Maintained version-wise records of reported issues to monitor resolution status, identify recurring defects, and measure platform improvement over time</li>
-              <li>▸ Operated without supervision across the full reporting lifecycle — from issue discovery and documentation through escalation and follow-up</li>
-            </ul>
-          </div>
-
-          <div style="margin-bottom: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0.2rem;">
-              <span>Intern — Machine Learning using Python</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem;">Jul 2025 – Sep 2025</span>
-            </div>
-            <div style="color: var(--brand-cyan); font-size: 0.88rem; margin-bottom: 0.5rem;">
-              Euphoria GenX · ISO 9001:2015 Certified · Remote · Techno India College of Technology
-            </div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.88rem; color: var(--text-secondary);">
-              <li>▸ Completed a structured ML internship working on an AI Financial Market Data Project using Python</li>
-              <li>▸ Applied Python-based tools to process and analyze financial market datasets as part of a defined project deliverable</li>
-              <li>▸ Gained exposure to ML workflows, data preprocessing, and model training within a supervised project structure</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Education -->
-        <section>
-          <div class="resume-section-title">EDUCATION</div>
-          <div style="display: flex; justify-content: space-between; font-weight: 700;">
-            <span>Bachelor of Computer Applications (BCA)</span>
-            <span style="font-family: var(--font-mono); font-size: 0.85rem;">2023 – 2027 (Expected)</span>
-          </div>
-          <div style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 0.6rem;">Techno International New Town, Kolkata</div>
-
-          <div style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.3rem;">
-            <strong>Class XII:</strong> Swarajaya Senior Secondary School, Alwar · NWAC Board · 78% · 2023
-          </div>
-          <div style="font-size: 0.88rem; color: var(--text-secondary);">
-            <strong>Class X:</strong> De Nobili School, Chandrapura · ICSE Board · 78% · 2021
-          </div>
-        </section>
-
-        <!-- Projects -->
-        <section>
-          <div class="resume-section-title">PROJECTS</div>
-
-          <div style="margin-bottom: 1rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700;">
-              <span>NEXUS — Project &amp; Workflow Management Platform</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem;">Product Design · 2025–2026</span>
-            </div>
-            <div style="color: var(--brand-cyan); font-size: 0.85rem; margin-bottom: 0.4rem;">Project Management · Workflow Automation · Analytics · Integrations</div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.88rem; color: var(--text-secondary);">
-              <li>▸ Conceptualized and designed a project management platform to centralize task tracking, collaboration, documentation, and workflow automation</li>
-              <li>▸ Defined automation features: deadline reminders, approval escalation, recurring tasks, risk alerts, and automated status updates</li>
-              <li>▸ Planned integration architecture for Google Calendar, Gmail, Slack, GitHub, and Google Drive with webhook extensibility</li>
-              <li>▸ Developed product requirements, feature prioritization framework, and phased deployment roadmap for enterprise use cases</li>
-            </ul>
-          </div>
-
-          <div style="margin-bottom: 1rem;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700;">
-              <span>INCUBES – Inter-College Event Website</span>
-              <span style="font-family: var(--font-mono); font-size: 0.85rem;">HTML, CSS, JavaScript · tint.edu.in/incubes · 2024</span>
-            </div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.88rem; color: var(--text-secondary);">
-              <li>▸ Led end-to-end project delivery for a live college event website — from requirement gathering and planning through development, testing, and launch for a fest with 300–500 attendees</li>
-              <li>▸ Defined project scope, assigned responsibilities across the team, and monitored progress against a fixed event deadline</li>
-              <li>▸ Managed competing priorities between technical development and coordination tasks, delivering on time with no scope reduction; site remains live at tint.edu.in/incubes</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Certifications -->
-        <section>
-          <div class="resume-section-title">CERTIFICATIONS &amp; TRAINING</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; color: var(--text-secondary);">
-            <li><strong>Accenture North America — Project Management Job Simulation</strong> (Nov 2024) — Forage · Completed end-to-end PM simulation covering project planning, stakeholder communication, and delivery tracking</li>
-            <li><strong>GMAT Focus — Quantitative Master Math Course</strong> (May 2026) — Udemy · Quantitative reasoning and analytical problem-solving</li>
-            <li><strong>Complete Course in Python · Complete Course in CSS · Complete Course in JavaScript</strong> (2024) — Udemy</li>
-          </ul>
-        </section>
-
-        <!-- Achievements -->
-        <section>
-          <div class="resume-section-title">ACHIEVEMENTS &amp; RECOGNITION</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: var(--text-secondary);">
-            <li>▸ <strong>Remarkable Performance — AI vs Human Debate Contest:</strong> Critical thinking &amp; argument under pressure (Dec 2025)</li>
-            <li>▸ <strong>Tech-A-Thon Participation — PRABUDDHA 2026:</strong> Inter-college technical competition (Apr 2026)</li>
-            <li>▸ <strong>Entrepreneurship Workshop:</strong> Kolkata Entrepreneurship Workshop (Jan 2026)</li>
-            <li>▸ <strong>Blockchain Technology Workshop:</strong> Two-day industry workshop on blockchain fundamentals (Jun 2024)</li>
-          </ul>
-        </section>
-
-        <!-- Languages -->
-        <section>
-          <div class="resume-section-title">LANGUAGES</div>
-          <p style="font-size: 0.88rem; color: var(--text-secondary);">
-            English (Proficient) · Hindi (Native) · Bengali (Basic)
-          </p>
-        </section>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top" aria-label="Back to top" title="Scroll to top">
-    <i class="ri-arrow-up-line"></i>
-  </button>
+  <!-- Toast Notification -->
+  <div id="toast">Copied to clipboard</div>
 
   <script src="./assets/js/main.js"></script>
 </body>
