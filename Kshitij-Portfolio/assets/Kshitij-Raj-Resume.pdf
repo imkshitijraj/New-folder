@@ -1,0 +1,82 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 3011 >>
+stream
+BT
+/F2 20 Tf 50 790 Td (KSHITIJ RAJ) Tj
+/F1 10 Tf 0 -18 Td (BCA Student | Esports Operations, Gameplay QA & Event Tech Delivery) Tj
+/F1 9 Tf 0 -14 Td (Kolkata, India | Email: kshitij.raj.96@gmail.com | LinkedIn: linkedin.com/in/imkshitijraj) Tj
+0 -10 Td () Tj
+ET
+q 0.5 0.5 0.5 RG 50 740 495 0.5 re S Q
+BT
+/F2 12 Tf 50 720 Td (SUMMARY) Tj
+/F1 9.5 Tf 0 -15 Td (BCA undergraduate at Techno International New Town with hands-on experience in tournament) Tj
+0 -13 Td (operations, brand activations, independent gameplay QA, and live event technology delivery.) Tj
+0 -20 Td () Tj
+/F2 12 Tf 0 0 Td (WORK EXPERIENCE) Tj
+/F2 10.5 Tf 0 -16 Td (The Esports Club - Student Brand Ambassador \(TEC Spartans\)) Tj
+/F1 9 Tf 0 -13 Td (2026 - Present | Kolkata / Hybrid) Tj
+/F1 9 Tf 0 -13 Td (- Coordinate tournament activations and campus gaming community outreach.) Tj
+0 -12 Td (- Handle on-ground logistics, player communications, and match-day operations.) Tj
+0 -12 Td (- Document regional participation metrics, match outcomes, and player feedback.) Tj
+0 -18 Td () Tj
+/F2 10.5 Tf 0 0 Td (Free Fire MAX India - Independent Gameplay QA & Feedback Contributor) Tj
+/F1 9 Tf 0 -13 Td (2025 - Present | Remote / Independent) Tj
+/F1 9 Tf 0 -13 Td (- Executed self-directed playtesting cycles across 15+ months of live updates.) Tj
+0 -12 Td (- Documented reproducible defect reports with clear variable isolation and step-by-step reproduction.) Tj
+0 -12 Td (- Categorized bugs by player severity and impact; monitored regressions across patch releases.) Tj
+0 -18 Td () Tj
+/F2 10.5 Tf 0 0 Td (Euphoria GenX - Machine Learning Intern) Tj
+/F1 9 Tf 0 -13 Td (Jul 2025 - Sep 2025 | Remote) Tj
+/F1 9 Tf 0 -13 Td (- Worked with financial market datasets using Python, Pandas, and NumPy.) Tj
+0 -12 Td (- Supported data preprocessing, feature engineering pipelines, and supervised model evaluation.) Tj
+0 -22 Td () Tj
+/F2 12 Tf 0 0 Td (SELECTED PROJECTS) Tj
+/F2 10.5 Tf 0 -16 Td (INCUBES - Inter-College Event Platform \(tint.edu.in/incubes\)) Tj
+/F1 9 Tf 0 -13 Td (- Technical Project Lead: built responsive web portal using semantic HTML5, CSS3, and JavaScript.) Tj
+0 -12 Td (- Coordinated multi-contributor workflow under strict immovable launch deadline for campus fest.) Tj
+0 -16 Td () Tj
+/F2 10.5 Tf 0 0 Td (NEXUS - Distributed Workflow Platform Architecture \(Conceptual Mockup\)) Tj
+/F1 9 Tf 0 -13 Td (- Authored PRD, workflow escalation specifications, and webhook integration architecture.) Tj
+0 -22 Td () Tj
+/F2 12 Tf 0 0 Td (EDUCATION) Tj
+/F2 10.5 Tf 0 -16 Td (Bachelor of Computer Applications \(BCA\)) Tj
+/F1 9 Tf 0 -13 Td (Techno International New Town, Kolkata | 2023 - 2027) Tj
+0 -20 Td () Tj
+/F2 12 Tf 0 0 Td (CORE SKILLS) Tj
+/F1 9 Tf 0 -14 Td (Operations: Tournament Ops, Community Coordination, Live Event Delivery, Schedule Management) Tj
+0 -12 Td (Quality Assurance: Defect Triage, Bug Reporting, Regression Testing, Variable Isolation) Tj
+0 -12 Td (Technical: HTML5, CSS3, JavaScript, Python basics, Git, GitHub) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000257 00000 n 
+0000003320 00000 n 
+0000003390 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3465
+%%EOF
