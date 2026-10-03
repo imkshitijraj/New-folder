@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Kshitij Raj</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    .not-found-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .not-found-code {
+      font-size: clamp(6rem, 15vw, 10rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+    .not-found-desc {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 1.5rem 0 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+
+  <main class="not-found-container">
+    <div class="not-found-code gradient-text">404</div>
+    <h1 style="font-size: 2rem; margin-top: 0.5rem;">Data Coordinate Not Found</h1>
+    <p class="not-found-desc">
+      The page or insight you're looking for appears to have moved, been deleted, or never existed in this dimension.
+    </p>
+    <a href="index.html" class="btn btn-primary">
+      <i class="ri-home-4-line"></i> Return to Homepage
+    </a>
+  </main>
+
+</body>
+</html>

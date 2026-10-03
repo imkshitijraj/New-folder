@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>Kshitij Raj — Python Data Analyst &amp; Web Developer</title>
+  <meta name="description" content="Portfolio of Kshitij Raj — Python Data Analyst and Web Developer specializing in insightful data visualization, modern web systems, and open-source software.">
+  <meta name="keywords" content="Kshitij Raj, Python Developer, Data Analyst, Web Developer, Portfolio, Kolkata, India">
+  <meta name="author" content="Kshitij Raj">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kshitij Raj — Python Data Analyst &amp; Web Developer">
+  <meta property="og:description" content="Explore the portfolio, projects, data analytics visualizations, and development journey of Kshitij Raj.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/168268734">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@imkshitijraj">
+
+  <!-- Remix Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Background Canvas for Constellation Particles -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header>
+    <nav class="navbar" id="main-nav" aria-label="Main Navigation">
+      <div class="container nav-container">
+        <!-- Logo -->
+        <a href="#home" class="nav-brand" id="brand-logo" aria-label="Kshitij Raj Portfolio Home">
+          <div class="nav-brand-logo">KR</div>
+          <span>Kshitij<span class="gradient-text">.dev</span></span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="nav-menu" id="desktop-menu">
+          <li><a href="#home" class="nav-link active" id="nav-link-home">Home</a></li>
+          <li><a href="#about" class="nav-link" id="nav-link-about">About</a></li>
+          <li><a href="#skills" class="nav-link" id="nav-link-skills">Skills</a></li>
+          <li><a href="#projects" class="nav-link" id="nav-link-projects">Projects</a></li>
+          <li><a href="#education" class="nav-link" id="nav-link-education">Education</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-link-contact">Contact</a></li>
+        </ul>
+
+        <!-- Controls: Theme Toggle & Mobile Hamburger -->
+        <div class="nav-controls">
+          <button id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <i class="ri-moon-line" id="theme-icon"></i>
+          </button>
+          
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="#home" class="nav-link" id="mob-link-home">Home</a>
+      <a href="#about" class="nav-link" id="mob-link-about">About</a>
+      <a href="#skills" class="nav-link" id="mob-link-skills">Skills</a>
+      <a href="#projects" class="nav-link" id="mob-link-projects">Projects</a>
+      <a href="#education" class="nav-link" id="mob-link-education">Education</a>
+      <a href="#contact" class="nav-link" id="mob-link-contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text & CTA -->
+          <div class="hero-content">
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Available for Data &amp; Web Opportunities
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text">Kshitij Raj</span>
+            </h1>
+
+            <div class="hero-typed-container">
+              <span class="gradient-secondary-text" id="typed-text"></span>
+              <span class="typed-cursor" aria-hidden="true"></span>
+            </div>
+
+            <p class="hero-description">
+              Passionate developer &amp; data analyst based in West Bengal, India. 
+              Bridging the gap between raw data analysis, statistical modeling, and 
+              intuitive, high-performance web applications.
+            </p>
+
+            <div class="hero-cta">
+              <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
+                <i class="ri-code-s-slash-line"></i> View Projects
+              </a>
+              <a href="#contact" class="btn btn-secondary" id="hero-cta-contact">
+                <i class="ri-mail-send-line"></i> Get in Touch
+              </a>
+            </div>
+
+            <!-- Animated Number Counters -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number" data-target="15" data-suffix="+">0</span>
+                <span class="stat-label">Projects Built</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="100" data-suffix="+">0</span>
+                <span class="stat-label">GitHub Commits</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="3" data-suffix="+ Years">0</span>
+                <span class="stat-label">Tech Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual & Interactive 3D Card -->
+          <div class="hero-visual">
+            <div class="profile-card">
+              
+              <!-- Floating Highlight Pills -->
+              <div class="floating-pill pill-1">
+                <i class="ri-file-chart-line" style="color: var(--accent-cyan);"></i>
+                <span>Data Analytics</span>
+              </div>
+              <div class="floating-pill pill-2">
+                <i class="ri-terminal-box-line" style="color: var(--accent-purple);"></i>
+                <span>Python Enthusiast</span>
+              </div>
+
+              <!-- Profile Identity -->
+              <div class="profile-card-header">
+                <div class="profile-avatar-wrap">
+                  <div class="avatar-fallback">KR</div>
+                </div>
+                <div class="profile-identity">
+                  <h3>Kshitij Raj</h3>
+                  <p>BCA Student &amp; Developer</p>
+                  <div class="status-pill">
+                    <i class="ri-checkbox-circle-fill"></i> Open to Collab
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Mock Terminal -->
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-line">
+                  <span class="t-kw">import</span> pandas <span class="t-kw">as</span> <span class="t-var">pd</span>
+                </div>
+                <div class="terminal-line">
+                  <span class="t-kw">from</span> analytics <span class="t-kw">import</span> <span class="t-fn">InsightEngine</span>
+                </div>
+                <div class="terminal-line">
+                  insights = <span class="t-fn">InsightEngine</span>.analyze(<span class="t-str">"datasets"</span>)
+                </div>
+                <div class="terminal-line">
+                  <span class="t-kw">print</span>(f<span class="t-str">"Precision: {insights.accuracy}%"</span>)
+                </div>
+              </div>
+
+              <!-- Quick Links inside card -->
+              <div style="display: flex; gap: 0.75rem; justify-content: center;">
+                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Profile">
+                  <i class="ri-github-fill"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn Profile">
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+                <a href="mailto:kshitijraj@example.com" class="btn-icon" aria-label="Send an Email">
+                  <i class="ri-mail-line"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME & BENTO GRID SECTION
+         ========================================================================== -->
+    <section class="about" id="about">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-subtitle">Discover My Story</span>
+          <h2 class="section-title">Driven by Data, Crafted for the Web</h2>
+          <p class="section-desc">
+            Combining logical rigor with modern frontend craftsmanship to turn complex problems into clean, usable solutions.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- Bento 1: Primary Bio (Col span 2) -->
+          <div class="bento-card bento-col-2 bento-bio">
+            <div>
+              <div class="bento-icon">
+                <i class="ri-user-smile-line"></i>
+              </div>
+              <h3>Background &amp; Passion</h3>
+              <p class="bento-bio-lead">
+                I am an undergraduate Computer Applications (BCA) student at Techno India in Kolkata, India.
+              </p>
+              <p style="margin-top: 0.75rem;">
+                My journey began with a curiosity for how data powers modern decision making. 
+                Over the past several years, I have sharpened my expertise in Python data wrangling, 
+                exploratory data analysis (EDA), and interactive web interfaces, contributing actively 
+                to open-source communities.
+              </p>
+            </div>
+            
+            <div class="bento-highlights">
+              <span class="highlight-tag"><i class="ri-check-line" style="color: var(--accent-cyan);"></i> Clean Code</span>
+              <span class="highlight-tag"><i class="ri-check-line" style="color: var(--accent-cyan);"></i> Data Visualization</span>
+              <span class="highlight-tag"><i class="ri-check-line" style="color: var(--accent-cyan);"></i> Open Source</span>
+              <span class="highlight-tag"><i class="ri-check-line" style="color: var(--accent-cyan);"></i> Responsive UX</span>
+            </div>
+          </div>
+
+          <!-- Bento 2: Location Radar -->
+          <div class="bento-card bento-location">
+            <div>
+              <div class="bento-icon">
+                <i class="ri-map-pin-2-line"></i>
+              </div>
+              <h3>Location</h3>
+              <p>West Bengal &amp; Kolkata, India</p>
+            </div>
+            <div class="map-visual">
+              <div class="location-radar">
+                <i class="ri-compass-3-line" style="color: var(--accent-cyan); font-size: 1.5rem;"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 3: Philosophy / Quote -->
+          <div class="bento-card bento-quote">
+            <div class="bento-icon">
+              <i class="ri-lightbulb-line"></i>
+            </div>
+            <h3>Philosophy</h3>
+            <p class="quote-text">
+              "Data without context is noise; design without purpose is decoration. Great products emerge where both meet."
+            </p>
+          </div>
+
+          <!-- Bento 4: Core Competencies (Col span 2) -->
+          <div class="bento-card bento-col-2">
+            <div class="bento-icon">
+              <i class="ri-stack-line"></i>
+            </div>
+            <h3>What I Bring to the Table</h3>
+            <p style="margin-bottom: 1rem;">
+              Whether cleaning messy datasets, building end-to-end data pipelines, or designing 
+              fluid web experiences, I prioritize maintainability, performance, and user impact.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+              <div style="padding: 0.75rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--accent-cyan);"><i class="ri-line-chart-line"></i> Analytics</strong>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Transforming raw numbers into decisive business intelligence.</p>
+              </div>
+              <div style="padding: 0.75rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                <strong style="color: var(--accent-indigo);"><i class="ri-layout-masonry-line"></i> Frontend</strong>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Crafting pixel-perfect, accessible, and fast web portals.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS & TECHNOLOGIES SECTION
+         ========================================================================== -->
+    <section class="skills" id="skills">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-subtitle">Technical Proficiency</span>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
+          <p class="section-desc">
+            A comprehensive overview of the programming languages, libraries, and frameworks I use to solve problems.
+          </p>
+        </div>
+
+        <div class="skills-wrapper">
+          
+          <!-- Category 1: Data Analytics & Python -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon cat-cyan">
+                <i class="ri-pie-chart-2-line"></i>
+              </div>
+              <div>
+                <h3>Data &amp; Python</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Analytics &amp; ML</span>
+              </div>
+            </div>
+
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Python (Core &amp; Advanced)</span>
+                  <span>92%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="92"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Pandas &amp; NumPy</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="88"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Data Viz (Matplotlib / Seaborn)</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="85"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>SQL &amp; Database Querying</span>
+                  <span>82%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="82"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tags-cloud">
+              <span class="tech-chip"><i class="ri-code-box-line"></i> Jupyter</span>
+              <span class="tech-chip"><i class="ri-bar-chart-box-line"></i> Power BI</span>
+              <span class="tech-chip"><i class="ri-table-line"></i> Excel (VLOOKUP, Pivot)</span>
+              <span class="tech-chip"><i class="ri-brain-line"></i> Scikit-Learn</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Web & Frontend -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon cat-purple">
+                <i class="ri-window-line"></i>
+              </div>
+              <div>
+                <h3>Web Development</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Frontend &amp; Responsive UI</span>
+              </div>
+            </div>
+
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>HTML5 &amp; Semantic Web</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="95"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>CSS3, Flexbox &amp; CSS Grid</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="90"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Modern JavaScript (ES6+)</span>
+                  <span>86%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="86"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>REST APIs &amp; Async Handling</span>
+                  <span>84%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="84"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tags-cloud">
+              <span class="tech-chip"><i class="ri-reactjs-line"></i> React Basics</span>
+              <span class="tech-chip"><i class="ri-css3-line"></i> Glassmorphism</span>
+              <span class="tech-chip"><i class="ri-speed-up-line"></i> Web Performance</span>
+              <span class="tech-chip"><i class="ri-smartphone-line"></i> Mobile First</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Tools & Ecosystem -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon cat-emerald">
+                <i class="ri-tools-line"></i>
+              </div>
+              <div>
+                <h3>Tools &amp; Workflow</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">DevOps &amp; Collaboration</span>
+              </div>
+            </div>
+
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Git Version Control</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="90"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>GitHub &amp; Open Source</span>
+                  <span>92%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="92"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Linux Shell &amp; Bash</span>
+                  <span>78%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="78"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>VS Code &amp; Debugging Tools</span>
+                  <span>94%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-percent="94"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tags-cloud">
+              <span class="tech-chip"><i class="ri-github-line"></i> CI/CD Actions</span>
+              <span class="tech-chip"><i class="ri-command-line"></i> CLI Workflows</span>
+              <span class="tech-chip"><i class="ri-markdown-line"></i> Markdown Specs</span>
+              <span class="tech-chip"><i class="ri-server-line"></i> PostgreSQL</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS SECTION
+         ========================================================================== -->
+    <section class="projects" id="projects">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-subtitle">Showcase</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-desc">
+            A selection of projects highlighting data analysis pipelines, interactive dashboards, and modern web applications.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="analytics">Data Analytics</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+          <button class="filter-btn" data-filter="python">Python &amp; ML</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- Project 1: DataViz Platform -->
+          <article class="project-card" data-category="analytics">
+            <div class="project-thumbnail">
+              <div class="project-thumb-preview">
+                <i class="ri-bar-chart-grouped-line preview-icon"></i>
+              </div>
+              <span class="project-badge-tag">Analytics</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">DataViz Analytics Platform</h3>
+              <p class="project-desc">
+                An interactive Python &amp; Chart.js dashboard for exploratory dataset analysis, automated correlation insights, and metric summarization.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Flask</span>
+                <span>Chart.js</span>
+              </div>
+              <div class="project-links">
+                <button class="project-link-btn view-project-btn" data-project="dataviz">
+                  <i class="ri-eye-line"></i> Case Study
+                </button>
+                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <i class="ri-github-line"></i> Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AlgoVault -->
+          <article class="project-card" data-category="python">
+            <div class="project-thumbnail">
+              <div class="project-thumb-preview" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(244, 63, 94, 0.2) 100%);">
+                <i class="ri-git-merge-line preview-icon" style="color: var(--accent-purple);"></i>
+              </div>
+              <span class="project-badge-tag">Algorithms</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AlgoVault — Python DSA</h3>
+              <p class="project-desc">
+                Educational open-source suite documenting 50+ data structures &amp; algorithmic complexities with visual pathfinding state demonstrations.
+              </p>
+              <div class="project-tech">
+                <span>Python 3</span>
+                <span>Algorithms</span>
+                <span>Data Structures</span>
+                <span>Docs</span>
+              </div>
+              <div class="project-links">
+                <button class="project-link-btn view-project-btn" data-project="algovault">
+                  <i class="ri-eye-line"></i> Case Study
+                </button>
+                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <i class="ri-github-line"></i> Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: SentimentX -->
+          <article class="project-card" data-category="analytics">
+            <div class="project-thumbnail">
+              <div class="project-thumb-preview" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);">
+                <i class="ri-chat-smile-3-line preview-icon" style="color: var(--accent-emerald);"></i>
+              </div>
+              <span class="project-badge-tag">NLP &amp; Data</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">SentimentX Live Engine</h3>
+              <p class="project-desc">
+                Natural Language Processing pipeline that classifies user sentiment, polarity, and emotion curves from real-time customer reviews.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>NLTK</span>
+                <span>Scikit-Learn</span>
+                <span>FastAPI</span>
+              </div>
+              <div class="project-links">
+                <button class="project-link-btn view-project-btn" data-project="sentimentx">
+                  <i class="ri-eye-line"></i> Case Study
+                </button>
+                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <i class="ri-github-line"></i> Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: DevPulse -->
+          <article class="project-card" data-category="web">
+            <div class="project-thumbnail">
+              <div class="project-thumb-preview" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);">
+                <i class="ri-pages-line preview-icon" style="color: var(--accent-amber);"></i>
+              </div>
+              <span class="project-badge-tag">Web App</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">DevPulse Developer Hub</h3>
+              <p class="project-desc">
+                High-performance developer portal and technical article feed built with clean semantic HTML, modular CSS, and responsive client caching.
+              </p>
+              <div class="project-tech">
+                <span>HTML5</span>
+                <span>Vanilla CSS</span>
+                <span>JavaScript</span>
+                <span>PWA</span>
+              </div>
+              <div class="project-links">
+                <button class="project-link-btn view-project-btn" data-project="devpulse">
+                  <i class="ri-eye-line"></i> Case Study
+                </button>
+                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <i class="ri-github-line"></i> Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ACADEMIC & EDUCATION JOURNEY
+         ========================================================================== -->
+    <section class="education" id="education">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-subtitle">Milestones</span>
+          <h2 class="section-title">Education &amp; Background</h2>
+          <p class="section-desc">
+            My foundational academic background and continuous self-driven learning trajectory.
+          </p>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-period">2023 — Present</div>
+              <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+              <div class="timeline-institution">Techno India University / Institute — Kolkata, India</div>
+              <p class="timeline-desc">
+                Core coursework focusing on Data Structures, Database Management Systems (DBMS), 
+                Computer Networks, Python Programming, and Software Engineering methodologies. 
+                Actively applying concepts through independent open-source projects and hackathon builds.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-period">Self-Driven Specialization</div>
+              <h3 class="timeline-title">Data Analytics &amp; Statistical Modeling</h3>
+              <div class="timeline-institution">Online Specializations &amp; Project Labs</div>
+              <p class="timeline-desc">
+                Comprehensive practical study in data cleaning, exploratory analysis, hypothesis testing, 
+                feature engineering, and statistical visualization using Python scientific libraries 
+                (Pandas, NumPy, Matplotlib, Seaborn).
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-subtitle">Reach Out</span>
+          <h2 class="section-title">Let's Build Something Together</h2>
+          <p class="section-desc">
+            Have a project in mind, a data challenge to crack, or want to discuss collaboration? My inbox is always open!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Channels Info -->
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="ri-mail-line"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>kshitijraj@example.com</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>West Bengal &amp; Kolkata, India</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="ri-github-line"></i>
+              </div>
+              <div class="contact-details">
+                <h4>GitHub</h4>
+                <p>github.com/imkshitijraj</p>
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <h4 style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Social Channels</h4>
+              <div class="social-links">
+                <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Profile">
+                  <i class="ri-github-fill"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn Profile">
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+                <a href="https://x.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Twitter X Profile">
+                  <i class="ri-twitter-x-fill"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form with Interactive Feedback -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div id="form-status" class="form-status" role="alert"></div>
+
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Alex Mercer" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="e.g. alex@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project, idea, or questions..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btn-submit-contact" style="width: 100%; margin-top: 0.5rem;">
+              <i class="ri-send-plane-fill"></i> Send Message
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        &copy; 2026 Kshitij Raj. Crafted with clean HTML, CSS &amp; JavaScript.
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PROJECT MODAL OVERLAY
+       ========================================================================== -->
+  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close project modal">&times;</button>
+      <div id="modal-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button id="back-to-top" aria-label="Back to top of page" title="Scroll to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Script File -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
