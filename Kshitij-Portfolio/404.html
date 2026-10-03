@@ -3,50 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page Not Found | Kshitij Raj</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <title>Page Not Found — Kshitij Raj</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <style>
-    .not-found-container {
-      min-height: 100vh;
+    .not-found-wrap {
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
+      align-items: flex-start;
+      padding: 6rem 0;
     }
-    .not-found-code {
-      font-size: clamp(6rem, 15vw, 10rem);
+    .not-found-badge {
+      margin-bottom: 1.5rem;
+    }
+    .not-found-num {
+      font-size: clamp(5rem, 12vw, 8rem);
       font-weight: 800;
       line-height: 1;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .not-found-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
     .not-found-desc {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
       max-width: 480px;
-      margin: 1.5rem 0 2rem;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Glow Effects -->
-  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-name">KSHITIJ RAJ</a>
+      <a href="index.html" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">
+        Return to Home
+      </a>
+    </div>
+  </header>
 
-  <main class="not-found-container">
-    <div class="not-found-code gradient-text">404</div>
-    <h1 style="font-size: 2rem; margin-top: 0.5rem;">Data Coordinate Not Found</h1>
+  <main class="container not-found-wrap">
+    <div class="badge badge-accent not-found-badge">Error 404</div>
+    <div class="not-found-num">404</div>
+    <h1 class="not-found-title">Page not found</h1>
     <p class="not-found-desc">
-      The page or insight you're looking for appears to have moved, been deleted, or never existed in this dimension.
+      The page you're looking for doesn't exist or has moved. Let's get you back to the main site.
     </p>
     <a href="index.html" class="btn btn-primary">
-      <i class="ri-home-4-line"></i> Return to Homepage
+      Back to Home <i class="ri-arrow-right-line" aria-hidden="true"></i>
     </a>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">Kshitij Raj © 2026 · Kolkata, India</span>
+      <a href="index.html" class="footer-link">Home</a>
+    </div>
+  </footer>
 
 </body>
 </html>

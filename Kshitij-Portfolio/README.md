@@ -1,57 +1,55 @@
-# Kshitij Raj — Professional Portfolio & Showcase
+# Kshitij Raj — Personal Portfolio
 
-> **Student Brand Ambassador • Esports & Event Operations • Community QA • Project Coordination**  
-> Kolkata, West Bengal, India │ [LinkedIn](https://linkedin.com/in/imkshitijraj) │ [GitHub](https://github.com/imkshitijraj)
+> **Technology · Gaming & Esports · Community · Events · Business**  
+> Kolkata, West Bengal, India · [LinkedIn](https://linkedin.com/in/imkshitijraj) · [GitHub](https://github.com/imkshitijraj)
 
-A clean, human-crafted personal portfolio website built with high-performance Vanilla HTML5, modern CSS3, and JavaScript.
+A contemporary personal portfolio website for Kshitij Raj, highlighting hands-on experience across esports operations with The Esports Club, independent gameplay QA for Free Fire MAX India, event web platform delivery, and software engineering.
 
----
-
-## 🌟 Executive Summary
-
-- **Esports & Event Operations**: Brand Ambassador at **The Esports Club (TEC Spartans)**, planning and executing regional esports activations end-to-end across Kolkata & Bengaluru.
-- **Independent Gameplay QA**: Over 15+ months managing independent QA workflows for **Free Fire MAX India** with severity-based bug triage and structured defect escalation.
-- **Project Coordination**: Led end-to-end delivery of the live **INCUBES** inter-college fest website ([tint.edu.in/incubes](https://tint.edu.in/incubes)) serving 300–500 attendees, and designed the **NEXUS** workflow management platform architecture.
-- **Machine Learning & Python**: Completed an ISO 9001:2015 certified ML internship with **Euphoria GenX** on an AI Financial Market Data Project.
+Built with clean semantic HTML5, modern CSS3 with custom properties and responsive typography, and lightweight vanilla JavaScript.
 
 ---
 
-## 🛠️ Skills & Competencies
+## 🎨 Creative & Design Direction
 
-- **Project & Event Management**: End-to-end project delivery, Timeline & deadline management, Stakeholder coordination, Risk identification & resolution.
-- **QA & Community Operations**: Gameplay testing & bug triage, UX & player feedback analysis, Issue documentation & escalation, Community coordination.
-- **Technical & Web**: HTML5, CSS3, JavaScript (Working knowledge), Python (Working knowledge), Machine Learning (Foundational), Responsive web design.
-
----
-
-## 🎓 Education & Certifications
-
-- **Bachelor of Computer Applications (BCA)** (2023 – 2027 Expected) — *Techno International New Town, Kolkata*
-- **Class XII** (2023) — *Swarajaya Senior Secondary School, Alwar* (NWAC Board · 78%)
-- **Class X** (2021) — *De Nobili School, Chandrapura* (ICSE Board · 78%)
-- **Accenture North America Project Management Simulation** (Nov 2024) — *Forage*
-- **GMAT Focus Quantitative Master Math Course** (May 2026) — *Udemy*
-- **Complete Courses in Python, CSS, and JavaScript** (2024) — *Udemy*
+- **Human & Editorial**: Designed as a genuine personal website reflecting an ambitious student building across technology, competitive gaming, and event delivery.
+- **Typographic Hierarchy**: Confident pairings of **Plus Jakarta Sans** for prominent display headlines and **Inter** for readable editorial body copy.
+- **Curated Palette**:
+  - **Obsidian Dark** (`#0d0f14`) with a warm, energetic vermilion accent (`#ff4d36`)
+  - **Editorial Bone Light** (`#faf9f6`) with rich editorial ink typography
+- **Varied Visual Layouts**: Replaces repetitive cards with distinct, content-driven layouts (featured hero spread, QA metric matrix, full-width product case study, and compact editorial rows).
 
 ---
 
-## 🏆 Key Achievements & Workshops
+## 📋 Background & Roles
 
-- **Remarkable Performance** — *AI vs Human Debate Contest* (Dec 2025)
-- **Tech-A-Thon Participation** — *PRABUDDHA 2026* (Apr 2026)
-- **Kolkata Entrepreneurship Workshop** (Jan 2026)
-- **Two-Day Industry Blockchain Technology Workshop** (Jun 2024)
+1. **Student Brand Ambassador** | *The Esports Club (TEC Spartans)* — *2026 – Present*  
+   Regional tournament activations, timeline and stakeholder coordination, live event execution.
+2. **Independent Gameplay QA Contributor** | *Free Fire MAX India* — *2025 – Present*  
+   15+ months independent QA workflow, severity triage, defect tracking, and player feedback synthesis.
+3. **Intern — Machine Learning using Python** | *Euphoria GenX* — *Jul 2025 – Sep 2025*  
+   Exploratory data analysis and predictive machine learning models on financial market datasets.
+4. **BCA Undergraduate** | *Techno International New Town, Kolkata* — *2023 – 2027*  
+   Core computer science coursework in Data Structures, Database Systems, Computer Networks, and Software Engineering.
+
+---
+
+## 🚀 Selected Work
+
+- **INCUBES 2024 — Inter-College Event Platform**: Official digital platform delivered on schedule for 300–500 attendees at [tint.edu.in/incubes](https://tint.edu.in/incubes).
+- **Free Fire MAX India QA**: 15+ months structured gameplay playtesting, severity classification, and defect tracking.
+- **NEXUS Platform**: Project and workflow automation architecture, PRD, and integration pipelines for Slack, GitHub, and Google Drive.
+- **AI Financial Market Analysis**: Machine learning models and Python data pipelines for financial datasets.
 
 ---
 
 ## 💻 Local Preview & Usage
 
-Clone the repository and open `index.html` directly in any web browser, or run a local dev server:
+Open `index.html` directly in any web browser, or launch with any local static file server:
 
 ```bash
 # Using Node / npx
 npx serve .
 
-# Open in browser
-http://localhost:3000
+# Or Python
+python -m http.server 3000
 ```

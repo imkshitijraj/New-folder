@@ -1,61 +1,125 @@
 /**
- * KSHITIJ RAJ — SLEEK OPERATIONAL PORTFOLIO
- * High-performance, zero gimmicks, clean human interactions
+ * KSHITIJ RAJ — PORTFOLIO SCRIPT
+ * Lightweight, accessible vanilla JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeToggle();
-  initCopyToolbar();
+  initTheme();
+  initMobileMenu();
+  initScrollSpy();
+  initClipboardCopy();
   initContactForm();
-  initPrintResume();
+  initPrintTriggers();
 });
 
 /* ==========================================================================
-   1. THEME SWITCHER
+   1. THEME SWITCHER (Dark Obsidian / Warm Light Bone)
    ========================================================================== */
-function initThemeToggle() {
-  const btn = document.getElementById('theme-toggle');
-  const icon = document.getElementById('theme-icon');
-  if (!btn || !icon) return;
+function initTheme() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  if (!toggleBtn || !themeIcon) return;
 
-  const currentTheme = localStorage.getItem('kr-theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  updateIcon(currentTheme);
+  const savedTheme = localStorage.getItem('kr_site_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
 
-  btn.addEventListener('click', () => {
-    const active = document.documentElement.getAttribute('data-theme');
-    const next = active === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('kr-theme', next);
-    updateIcon(next);
+  toggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('kr_site_theme', newTheme);
+    updateThemeIcon(newTheme);
   });
 
-  function updateIcon(theme) {
+  function updateThemeIcon(theme) {
     if (theme === 'light') {
-      icon.className = 'ri-sun-line';
-      btn.setAttribute('aria-label', 'Switch to dark theme');
+      themeIcon.className = 'ri-sun-line';
+      toggleBtn.setAttribute('aria-label', 'Switch to dark theme');
     } else {
-      icon.className = 'ri-moon-line';
-      btn.setAttribute('aria-label', 'Switch to light theme');
+      themeIcon.className = 'ri-moon-line';
+      toggleBtn.setAttribute('aria-label', 'Switch to light theme');
     }
   }
 }
 
 /* ==========================================================================
-   2. ONE-CLICK EMAIL COPY & TOAST
+   2. MOBILE NAVIGATION DRAWER
    ========================================================================== */
-function initCopyToolbar() {
+function initMobileMenu() {
+  const toggleBtn = document.getElementById('mobile-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  const mobileIcon = document.getElementById('mobile-icon');
+  if (!toggleBtn || !drawer) return;
+
+  function toggleMenu(open) {
+    const isOpen = open !== undefined ? open : !drawer.classList.contains('open');
+    drawer.classList.toggle('open', isOpen);
+    toggleBtn.setAttribute('aria-expanded', isOpen);
+    if (mobileIcon) {
+      mobileIcon.className = isOpen ? 'ri-close-line' : 'ri-menu-line';
+    }
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  toggleBtn.addEventListener('click', () => toggleMenu());
+
+  // Close when clicking mobile links
+  const links = drawer.querySelectorAll('.mobile-nav-link, .print-trigger');
+  links.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+}
+
+/* ==========================================================================
+   3. SCROLL SPY (Highlight active nav link)
+   ========================================================================== */
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  if (!sections.length || !navLinks.length) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(sec => {
+      const sectionHeight = sec.offsetHeight;
+      const sectionTop = sec.offsetTop - 120;
+      const sectionId = sec.getAttribute('id');
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   4. CLIPBOARD COPY WITH TOAST NOTIFICATION
+   ========================================================================== */
+function initClipboardCopy() {
   const copyBtns = document.querySelectorAll('.copy-trigger');
-  const toast = document.getElementById('toast');
+  const toast = document.getElementById('toast-notice');
 
   copyBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const textToCopy = btn.getAttribute('data-copy') || 'kshitij.raj.96@gmail.com';
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast(`Copied ${textToCopy} to clipboard`);
-      }).catch(() => {
-        showToast(`Email: ${textToCopy}`);
-      });
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const text = btn.getAttribute('data-copy') || 'kshitij.raj.96@gmail.com';
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`Copied to clipboard: ${text}`);
+        }).catch(() => {
+          showToast(`Email: ${text}`);
+        });
+      } else {
+        showToast(`Email: ${text}`);
+      }
     });
   });
 
@@ -70,62 +134,66 @@ function initCopyToolbar() {
 }
 
 /* ==========================================================================
-   3. PRINT / SAVE PDF TRIGGER
-   ========================================================================== */
-function initPrintResume() {
-  const printBtns = document.querySelectorAll('.print-trigger');
-  printBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.print();
-    });
-  });
-}
-
-/* ==========================================================================
-   4. CONTACT FORM
+   5. CONTACT FORM HANDLING
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const alertBox = document.getElementById('form-alert');
-  if (!form || !alertBox) return;
+  const submitBtn = document.getElementById('submit-btn');
+  if (!form || !alertBox || !submitBtn) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = form.querySelector('#name').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const message = form.querySelector('#message').value.trim();
+    const name = form.querySelector('#user-name').value.trim();
+    const email = form.querySelector('#user-email').value.trim();
+    const message = form.querySelector('#user-message').value.trim();
 
     if (!name || !email || !message) {
-      alertBox.className = 'form-alert error';
-      alertBox.textContent = 'Please fill out all fields.';
+      showAlert('Please fill in all fields before sending.', 'error');
       return;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-      alertBox.className = 'form-alert error';
-      alertBox.textContent = 'Please enter a valid email address.';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showAlert('Please enter a valid email address.', 'error');
       return;
     }
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Sending...';
     submitBtn.disabled = true;
 
-    // Simulate sending
+    // Simulate reliable dispatch
     setTimeout(() => {
-      submitBtn.textContent = originalText;
+      submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
-      alertBox.className = 'form-alert success';
-      alertBox.textContent = `Thanks ${name}, your message has been sent to kshitij.raj.96@gmail.com. I will get back to you shortly.`;
       form.reset();
+      showAlert('Thank you! Your message has been sent. I will get back to you shortly.', 'success');
 
       setTimeout(() => {
         alertBox.style.display = 'none';
-      }, 6000);
+        alertBox.className = 'form-alert';
+      }, 7000);
     }, 600);
+  });
+
+  function showAlert(text, type) {
+    alertBox.textContent = text;
+    alertBox.className = `form-alert ${type}`;
+    alertBox.style.display = 'block';
+  }
+}
+
+/* ==========================================================================
+   6. PRINT / PDF TRIGGERS
+   ========================================================================== */
+function initPrintTriggers() {
+  const triggers = document.querySelectorAll('.print-trigger');
+  triggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.print();
+    });
   });
 }
