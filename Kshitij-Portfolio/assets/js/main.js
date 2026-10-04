@@ -124,12 +124,21 @@ function initMobileMenu() {
 function initScrollSpy() {
   const sections = [...document.querySelectorAll('section[id]')];
   const links = document.querySelectorAll('.nav-link, .mobile-nav-link');
+  const header = document.querySelector('.site-header');
   if (!sections.length) return;
   let ticking = false;
+  let activationOffset = 0;
+  function measureOffset() {
+    // Match the anchor landing position defined by CSS, including text scaling.
+    const styles = getComputedStyle(document.documentElement);
+    const anchorOffset = parseFloat(styles.scrollPaddingTop) || 0;
+    activationOffset = Math.max(header?.getBoundingClientRect().bottom || 0, anchorOffset);
+    scheduleUpdate();
+  }
   function updateActiveLinks() {
     let active = sections[0];
     for (const section of sections) {
-      if (section.getBoundingClientRect().top <= 145) active = section;
+      if (section.getBoundingClientRect().top <= activationOffset + 1) active = section;
     }
     if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
       active = sections[sections.length - 1];
@@ -146,9 +155,10 @@ function initScrollSpy() {
     if (!ticking) { ticking = true; requestAnimationFrame(updateActiveLinks); }
   }
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
-  window.addEventListener('resize', scheduleUpdate, { passive: true });
-  window.addEventListener('load', updateActiveLinks, { once: true });
-  updateActiveLinks();
+  window.addEventListener('resize', measureOffset, { passive: true });
+  window.addEventListener('load', measureOffset, { once: true });
+  if (header) new ResizeObserver(measureOffset).observe(header);
+  measureOffset();
 }
 
 /* ==========================================================================
@@ -168,10 +178,10 @@ function initClipboardCopy() {
         navigator.clipboard.writeText(text).then(() => {
           showToast(`Copied to clipboard: ${text}`);
         }).catch(() => {
-          showToast(`Email: ${text}`);
+          showToast(`Could not copy. Select the email address to open your email app: ${text}`);
         });
       } else {
-        showToast(`Email: ${text}`);
+        showToast(`Copy is unavailable. Select the email address to open your email app: ${text}`);
       }
     });
   });
@@ -236,7 +246,7 @@ function initContactForm() {
     fallback.href = `mailto:kshitij.raj.96@gmail.com?subject=${encodeURIComponent('Inquiry from ' + name)}&body=${encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')')}`;
     fallback.textContent = 'Open email draft ↗';
     if (!endpoint) {
-      showAlert('No form service is configured yet. Nothing has been sent. Use “Open email draft” below to send this message in your email app.', 'info');
+      showAlert('Your draft is ready. Choose “Open email draft” below to continue in your email app. Nothing has been sent from this page.', 'info');
       return;
     }
     submitting = true;
