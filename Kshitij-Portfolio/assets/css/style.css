@@ -1787,11 +1787,15 @@ body.menu-open { overflow: hidden; }
   .hero-brand-name { font-size: 38pt; }
   .section-title { font-size: 24pt; }
   .section-header { margin-bottom: 1.5rem; }
-  .section-header, .case-meta-top { break-inside: avoid; break-after: avoid; }
-  .case-study-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .experience-row { grid-template-columns: 170px 1fr; gap: 2rem; }
+  .section-header { break-inside: avoid; }
+  .case-meta-top, .section-kicker { break-after: avoid; }
+  .case-study-lead, .case-study-grid, .experience-timeline, .experience-row,
+  .project-editorial-row, .wide-feature-header, .about-horizon { display: block; }
+  .experience-row > div:first-child { margin-bottom: 0.75rem; }
   .domains-editorial-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .domain-entry, .qa-editorial-card, .case-contribution-block { break-inside: avoid; }
+  .about-credentials-frame, .compact-feature-line { break-inside: avoid; }
+  .about-credentials-frame { margin-bottom: 1.5rem; }
   .contact-links-list { gap: 0.5rem; }
   #contact { break-inside: avoid; }
   .case-study-lead, .project-editorial-row, .project-wide-feature { padding: 1.5rem 0; margin: 0; }
