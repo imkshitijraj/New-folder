@@ -167,7 +167,8 @@ button {
 /* Accessibility: Skip to Main Content Link */
 .skip-link {
   position: absolute;
-  top: -100px;
+  top: 1rem;
+  transform: translateY(calc(-100% - 2rem));
   left: 1.5rem;
   background-color: var(--text-primary);
   color: var(--bg-primary);
@@ -178,10 +179,10 @@ button {
   z-index: 99999;
   border-radius: var(--radius-xs);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: top 0.2s ease;
+  transition: transform 0.2s ease;
 }
 .skip-link:focus {
-  top: 1rem;
+  transform: translateY(0);
   outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
@@ -204,7 +205,7 @@ button {
   height: 26px;
   border: 1.5px solid var(--text-primary);
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: min(0.72rem, 13px);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-primary);
