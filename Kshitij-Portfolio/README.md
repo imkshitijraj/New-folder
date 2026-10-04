@@ -19,7 +19,7 @@ No build step or production package dependencies are required. Serve the directo
 
 ## Contact form configuration
 
-`FORM_ENDPOINT` in `assets/js/main.js` is intentionally empty. The page explains that no form service is configured, validates the fields, and creates an explicit **Open email draft** link. It does not send a message or automatically open another application. Direct email works without JavaScript.
+`FORM_ENDPOINT` in `assets/js/main.js` is intentionally empty. The page explains that it prepares a draft for the visitor's email app, validates the fields, and creates an explicit **Open email draft** link after **Prepare Email**. Nothing is sent from this page. Direct email works without JavaScript.
 
 To enable submission, set `FORM_ENDPOINT` to a real HTTPS service accepting JSON `{ name, email, message }`. It must allow this origin through CORS and return a successful HTTP status only when it accepts the submission. Adapt request/response handling if the chosen provider uses another contract; providers are not interchangeable. Never put secret API keys in frontend code.
 
@@ -38,8 +38,10 @@ Role descriptions and dates in the resume are self-reported, not independent ver
 
 If the production URL changes, update canonical, OG/Twitter URLs and images, Person JSON-LD, and the deployment prefix in `404.html`. The current 404 page must also be installed at the hosting provider's effective error-page location. GitHub Pages may require a `404.html` at the repository publishing root; this workspace is a subdirectory, so verify routing after deployment.
 
+Fresh verification on 2026-10-04 found that nested missing URLs return HTTP 404 with GitHub's default page. The custom page at `/New-folder/Kshitij-Portfolio/404.html` loads successfully, but `/New-folder/404.html` is missing. Install a copy of the custom page at the publishing root during deployment, retaining its existing portfolio prefix, then retest a nested missing URL. Editing the portfolio's child directory alone does not fix host-level error routing.
+
 The portrait JPEG remains as an image fallback and social preview. Fonts are hosted locally under their included open licenses. The site makes no external font or icon requests.
 
 ## QA
 
-See `PRODUCTION-READINESS.md` for the dated audit, conditions tested, remaining evidence gaps, and measured scores. Temporary audit tools and artifacts live under ignored `tmp/`; they are not production dependencies.
+See `FOCUSED-REVIEW.md` for the latest targeted pass and fresh test evidence. `PRODUCTION-READINESS.md` is the earlier audit. Temporary audit tools and artifacts live under ignored `tmp/`; they are not production dependencies.
