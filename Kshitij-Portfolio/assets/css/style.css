@@ -38,7 +38,7 @@
   --accent-subtle: rgba(255, 77, 54, 0.08);
 
   --container-max: 1240px;
-  --header-height: 68px;
+  --header-height: max(68px, 4.25rem);
   color-scheme: dark;
 
   /* Architectural radii - crisp, intentional, non-bubbly */
@@ -99,6 +99,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.65;
+  overflow-wrap: anywhere;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition), color var(--transition);
@@ -346,7 +347,7 @@ button {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 .brand-name {
@@ -355,6 +356,9 @@ button {
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  overflow-wrap: anywhere;
+  min-width: 0;
+  line-height: 1.1;
 }
 
 .site-header a.brand-name {
@@ -374,6 +378,11 @@ button {
   align-items: center;
   gap: 2rem;
 }
+
+.site-header.is-compact .main-nav { display: none; }
+.site-header.is-compact .mobile-menu-btn { display: flex; }
+.site-header.is-compact .brand-location,
+.site-header.is-compact .btn-header-talk { display: none; }
 
 .nav-links {
   display: flex;
@@ -417,6 +426,7 @@ button {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  min-width: 0;
 }
 
 .header-actions {
@@ -1248,7 +1258,7 @@ button {
 
 .about-facts-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-subtle);

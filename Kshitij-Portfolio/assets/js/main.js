@@ -10,11 +10,46 @@ const FORM_ENDPOINT = "";
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initHeaderLayout();
   initMobileMenu();
   initScrollSpy();
   initClipboardCopy();
   initContactForm();
 });
+
+// Text enlargement can make a desktop navigation row wider than its container.
+function initHeaderLayout() {
+  const header = document.querySelector('.site-header');
+  const inner = header?.querySelector('.header-inner');
+  const nav = header?.querySelector('.main-nav');
+  if (!nav || !inner) return;
+  let pending = false;
+  function update() {
+    pending = false;
+    header.classList.remove('is-compact');
+    if (getComputedStyle(nav).display !== 'none') {
+      const children = [...inner.children];
+      const availableRight = inner.getBoundingClientRect().right - parseFloat(getComputedStyle(inner).paddingRight);
+      const lastRight = children[children.length - 1].getBoundingClientRect().right;
+      const bounds = inner.getBoundingClientRect();
+      const tooTall = children.some(child => {
+        const box = child.getBoundingClientRect();
+        return box.top < bounds.top - 1 || box.bottom > bounds.bottom + 1;
+      });
+      header.classList.toggle('is-compact', lastRight > availableRight + 1 || tooTall);
+    }
+    header.dispatchEvent(new Event('navigationlayoutchange'));
+  }
+  function schedule() {
+    if (!pending) { pending = true; requestAnimationFrame(update); }
+  }
+  const observer = new ResizeObserver(schedule);
+  observer.observe(inner);
+  observer.observe(header.querySelector('.header-brand'));
+  window.addEventListener('resize', schedule, { passive: true });
+  document.fonts.ready.then(schedule);
+  update();
+}
 
 /* ==========================================================================
    1. THEME SWITCHER (Dark Obsidian / Warm Light Bone)
@@ -110,12 +145,14 @@ function initMobileMenu() {
       } else setMenuState(false);
     });
   });
-  desktop.addEventListener('change', () => {
-    if (desktop.matches && open) {
+  function resetForDesktop() {
+    if (getComputedStyle(toggleBtn).display === 'none' && open) {
       setMenuState(false, false);
       document.querySelector('.header-brand-link').focus();
     }
-  });
+  }
+  desktop.addEventListener('change', resetForDesktop);
+  document.querySelector('.site-header').addEventListener('navigationlayoutchange', resetForDesktop);
 }
 
 /* ==========================================================================
