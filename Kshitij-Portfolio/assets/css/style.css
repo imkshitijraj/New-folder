@@ -1678,7 +1678,7 @@ button {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 5rem 0;
+      padding-block: 5rem;
     }
     .not-found-badge {
       margin-bottom: 1.5rem;
@@ -1725,6 +1725,7 @@ button {
   display: inline-flex; align-items: center; min-height: 44px;
 }
 .footer-social-links a { justify-content: center; min-width: 44px; }
+.hero-text-link, .footer-nav a, .nav-link { min-width: 44px; }
 .nav-link.active::after { bottom: 5px; }
 .mobile-nav-link { min-height: 44px; }
 .mobile-nav-links { gap: 0.45rem; }
@@ -1745,6 +1746,9 @@ body.menu-open { overflow: hidden; }
 .form-control-input[readonly], .form-control-area[readonly] { opacity: 0.8; }
 .toast-notice { max-width: calc(100vw - 2rem); overflow-wrap: anywhere; }
 .not-found-wrap { padding-top: calc(var(--header-height) + 3rem); }
+.site-header a.brand-name { display: inline-flex; align-items: center; min-height: 44px; }
+.btn-case-action { margin-right: 1rem; }
+.step-num { flex-shrink: 0; }
 
 @media (max-width: 1200px) {
   .compact-feature-line { grid-template-columns: 1fr; gap: 0.75rem; }
@@ -1764,6 +1768,8 @@ body.menu-open { overflow: hidden; }
   .editorial-photo-frame:hover .editorial-photo { transform: none; }
 }
 @media print {
+  @page { margin: 14mm; }
+  html { font-size: 14px; }
   :root, [data-theme="light"] {
     color-scheme: light;
     --bg-primary: #fff; --bg-surface: #fff; --bg-elevated: #fff;
@@ -1773,6 +1779,7 @@ body.menu-open { overflow: hidden; }
   .site-header, .hero-actions, .mobile-nav-drawer, .minimal-form-box,
   .toast-notice, .site-footer, .copy-button, .skip-link { display: none !important; }
   body, body.menu-open { overflow: visible; background: #fff; color: #111; font-size: 11pt; }
+  .container { padding-inline: 0; }
   .hero-section { min-height: auto; padding: 1rem 0; }
   .section { padding: 1.5rem 0; }
   .hero-editorial-grid { grid-template-columns: 1.5fr 0.6fr; gap: 2rem; }
@@ -1780,6 +1787,13 @@ body.menu-open { overflow: hidden; }
   .hero-brand-name { font-size: 38pt; }
   .section-title { font-size: 24pt; }
   .section-header { margin-bottom: 1.5rem; }
+  .section-header, .case-meta-top { break-inside: avoid; break-after: avoid; }
+  .case-study-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .experience-row { grid-template-columns: 170px 1fr; gap: 2rem; }
+  .domains-editorial-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .domain-entry, .qa-editorial-card, .case-contribution-block { break-inside: avoid; }
+  .contact-links-list { gap: 0.5rem; }
+  #contact { break-inside: avoid; }
   .case-study-lead, .project-editorial-row, .project-wide-feature { padding: 1.5rem 0; margin: 0; }
   h2, h3, h4 { break-after: avoid; }
   p, li { orphans: 3; widows: 3; }
