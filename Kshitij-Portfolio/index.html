@@ -3,40 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <!-- Anti-Flash Theme Initializer (Executes synchronously before render) -->
-  <script>
-    (function() {
-      var savedTheme = localStorage.getItem('kr_site_theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+  <script src="./assets/js/theme-init.js"></script>
 
   <!-- SEO & Identity -->
   <title>Kshitij Raj — Technology, Esports &amp; Operations</title>
   <meta name="description" content="Personal portfolio of Kshitij Raj. BCA student working across esports tournament operations, gameplay quality assurance, and live event technology.">
   <meta name="author" content="Kshitij Raj">
-  <meta name="keywords" content="Kshitij Raj, The Esports Club, TEC Spartans, Free Fire MAX QA, Esports Operations, BCA Kolkata, Techno International New Town, Web Delivery">
-  <link rel="canonical" href="https://imkshitijraj.github.io/">
+  <link rel="canonical" href="https://imkshitijraj.github.io/New-folder/Kshitij-Portfolio/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://imkshitijraj.github.io/">
+  <meta property="og:url" content="https://imkshitijraj.github.io/New-folder/Kshitij-Portfolio/">
   <meta property="og:title" content="Kshitij Raj — Technology, Esports &amp; Operations">
   <meta property="og:description" content="Personal portfolio of Kshitij Raj. BCA student working across esports tournament operations, gameplay quality assurance, and live event technology.">
-  <meta property="og:image" content="https://imkshitijraj.github.io/assets/images/kshitij-portrait.jpg">
+  <meta property="og:image" content="https://imkshitijraj.github.io/New-folder/Kshitij-Portfolio/assets/images/kshitij-portrait.jpg">
   <meta property="og:image:alt" content="Portrait of Kshitij Raj">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://imkshitijraj.github.io/">
+  <meta name="twitter:url" content="https://imkshitijraj.github.io/New-folder/Kshitij-Portfolio/">
   <meta name="twitter:title" content="Kshitij Raj — Technology, Esports &amp; Operations">
   <meta name="twitter:description" content="Personal portfolio of Kshitij Raj. BCA student working across esports tournament operations, gameplay quality assurance, and live event technology.">
-  <meta name="twitter:image" content="https://imkshitijraj.github.io/assets/images/kshitij-portrait.jpg">
+  <meta name="twitter:image" content="https://imkshitijraj.github.io/New-folder/Kshitij-Portfolio/assets/images/kshitij-portrait.jpg">
   <meta name="twitter:image:alt" content="Portrait of Kshitij Raj">
 
   <!-- Structured Data: Person Schema -->
@@ -45,16 +37,12 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Kshitij Raj",
-    "jobTitle": "Student Brand Ambassador & Gameplay QA Contributor",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "The Esports Club"
-    },
-    "alumniOf": {
+    "jobTitle": "BCA undergraduate",
+    "affiliation": {
       "@type": "CollegeOrUniversity",
       "name": "Techno International New Town"
     },
-    "url": "https://imkshitijraj.github.io/",
+    "url": "https://imkshitijraj.github.io/New-folder/Kshitij-Portfolio/",
     "sameAs": [
       "https://linkedin.com/in/imkshitijraj",
       "https://github.com/imkshitijraj"
@@ -67,14 +55,7 @@
   }
   </script>
 
-  <!-- Google Fonts (Optimized Non-Blocking Preconnect) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Remix Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  
+  <link rel="preload" href="./assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -111,13 +92,13 @@
 
       <div class="header-actions">
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch to light theme" title="Switch to light theme">
-          <i class="ri-moon-line" id="theme-icon" aria-hidden="true"></i>
+          <svg class="icon" id="theme-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg>
         </button>
         <a href="#contact" class="btn btn-secondary btn-header-talk">
           Let’s Talk
         </a>
         <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
-          <i class="ri-menu-line" id="mobile-icon" aria-hidden="true"></i>
+          <svg class="icon" id="mobile-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
 
@@ -125,7 +106,8 @@
   </header>
 
   <!-- Mobile Drawer Dialog -->
-  <div class="mobile-nav-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu" aria-hidden="true">
+  <div class="mobile-nav-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu" aria-hidden="true" tabindex="-1">
+    <button type="button" id="drawer-close" class="drawer-close btn btn-secondary">Close menu <span aria-hidden="true">×</span></button>
     <ul class="mobile-nav-links">
       <li><a href="#home" class="mobile-nav-link">Home</a></li>
       <li><a href="#work" class="mobile-nav-link">Selected Work</a></li>
@@ -140,12 +122,12 @@
         Email Directly
       </a>
       <a href="./assets/Kshitij-Raj-Resume.pdf" class="btn btn-secondary btn-full" target="_blank" rel="noopener noreferrer">
-        Download Resume (PDF)
+        View Resume (PDF)
       </a>
     </div>
   </div>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <!-- ==========================================================================
          01 — HERO (Personal Identity & Core Positioning)
          ========================================================================== -->
@@ -170,12 +152,12 @@
             </p>
 
             <p class="hero-narrative">
-              Based in Kolkata. Student Brand Ambassador with The Esports Club, independent tester across 15+ months of Free Fire MAX updates, and platform builder for campus festivals.
+              Based in Kolkata. Student Brand Ambassador with The Esports Club, independent Free Fire MAX playtester, and platform builder for campus festivals.
             </p>
 
             <div class="hero-actions">
               <a href="#work" class="btn btn-primary">
-                View Selected Work <i class="ri-arrow-down-line" aria-hidden="true"></i>
+                View Selected Work <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 4v16m-6-6 6 6 6-6"/></svg>
               </a>
               <div class="hero-text-links">
                 <a href="mailto:kshitij.raj.96@gmail.com" class="hero-text-link">
@@ -196,6 +178,8 @@
           <!-- Column B: Integrated Editorial Photograph Presentation -->
           <div class="hero-media-col">
             <div class="editorial-photo-frame">
+              <picture>
+              <source type="image/webp" srcset="./assets/images/kshitij-portrait-320.webp 320w, ./assets/images/kshitij-portrait-640.webp 640w" sizes="(max-width: 768px) calc(100vw - 48px), 380px">
               <img 
                 src="./assets/images/kshitij-portrait.jpg" 
                 alt="Portrait of Kshitij Raj" 
@@ -203,7 +187,9 @@
                 width="640"
                 height="640"
                 loading="eager"
+                fetchpriority="high"
               >
+              </picture>
             </div>
             <div class="editorial-photo-caption">
               <span>Kshitij Raj</span>
@@ -226,74 +212,55 @@
         
         <div class="section-header">
           <span class="section-kicker">Selected Work</span>
-          <h2 class="section-title">Projects delivered in the real world.</h2>
+          <h2 class="section-title">Web delivery, gameplay testing, and a workflow concept.</h2>
           <p class="section-description">
-            Evidence of work delivered across event platforms, mobile gameplay quality assurance, and system workflows.
+            A selection of project work and independent practice, with public evidence linked where available.
           </p>
         </div>
 
         <!-- Project 01: Lead Editorial Case Study (INCUBES 2024–2025) -->
         <article class="case-study-lead">
-          <div class="case-live-preview-card">
-            <div class="preview-card-header">
-              <span class="preview-card-status"><span class="status-live-dot"></span> Active Production Deployment</span>
-              <span class="preview-card-domain">tint.edu.in/incubes</span>
-            </div>
-            <div class="preview-card-body">
-              <div class="preview-card-badge">Live University Event Portal</div>
-              <h4 class="preview-card-title">IncubES Summit Platform — Techno International New Town</h4>
-              <p class="preview-card-summary">
-                Official digital portal engineered for Techno International New Town's flagship annual summit, handling attendee schedules, registration flows, departmental coordination, and event broadcasts under an immovable campus festival launch deadline.
-              </p>
-              <div class="preview-card-footer">
-                <a href="https://tint.edu.in/incubes" target="_blank" rel="noopener noreferrer" class="preview-live-link">
-                  Open Live Platform <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
-                </a>
-                <span class="preview-tech-note">Delivered using Semantic HTML5 · CSS3 · Vanilla JavaScript</span>
-              </div>
-            </div>
-          </div>
-
           <div class="case-study-grid">
             <div>
               <div class="case-meta-top">
                 <span class="tag">Event &amp; Community Web</span>
-                <span class="tag">Production · 2024–2025</span>
+                <span class="tag">01 · University event website</span>
               </div>
 
               <h3 class="case-title">
-                INCUBES — Inter-College Event Platform
+                INCUBES — University Event Website
               </h3>
 
               <a href="https://tint.edu.in/incubes" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-case-action">
-                Visit Live Site (tint.edu.in/incubes) <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+                Visit university website <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>
               </a>
 
+              <a href="https://github.com/imkshitijraj/college-web" target="_blank" rel="noopener noreferrer" class="btn-link">View source repository ↗</a>
               <div class="case-scale-list">
                 <div class="scale-item">
                   <span class="scale-item-label">Audience Scope</span>
                   <span class="scale-item-value">Campus Summit Participants</span>
                 </div>
                 <div class="scale-item">
-                  <span class="scale-item-label">Launch Status</span>
-                  <span class="scale-item-value">Delivered for Fest Launch</span>
+                  <span class="scale-item-label">Public evidence</span>
+                  <span class="scale-item-value">University website &amp; source</span>
                 </div>
                 <div class="scale-item">
                   <span class="scale-item-label">Technical Scope</span>
-                  <span class="scale-item-value">Schedules, Registrations &amp; Notices</span>
+                  <span class="scale-item-value">Event information &amp; registration links</span>
                 </div>
               </div>
             </div>
 
             <div>
               <p class="case-description">
-                Techno International New Town’s flagship campus festival required a central digital entry point for event schedule broadcasts, departmental registration details, and attendee communication under an immovable launch deadline.
+                A university event website bringing together summit information, the organizing committee, a roadmap, and registration links. The published site and source repository can be reviewed directly.
               </p>
 
               <div class="case-contribution-block">
                 <h4 class="case-contribution-title">My Contribution &amp; Ownership</h4>
                 <p class="case-contribution-copy">
-                  Served as the technical project lead. Owned project planning, assigned tasks across student contributors, engineered the responsive frontend using clean semantic HTML5, CSS3, and JavaScript, and coordinated with faculty advisors to launch the site on schedule.
+                  Built the responsive frontend and coordinated student contributions. My resume records the technical project lead role; the public repository provides the implementation. The published frontend uses HTML, CSS, JavaScript, and Bootstrap.
                 </p>
               </div>
 
@@ -301,6 +268,7 @@
                 <span class="tag">HTML5</span>
                 <span class="tag">CSS3</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">Bootstrap</span>
                 <span class="tag">Project Delivery</span>
                 <span class="tag">Team Coordination</span>
               </div>
@@ -313,7 +281,7 @@
           <div>
             <div class="case-meta-top">
               <span class="tag">Gaming &amp; Esports QA</span>
-              <span class="tag">15+ Months Independent</span>
+              <span class="tag">02 · Independent practice</span>
             </div>
 
             <h3 class="project-editorial-title">
@@ -327,7 +295,7 @@
             <div class="case-contribution-block">
               <h4 class="case-contribution-title">My Contribution &amp; Methodology</h4>
               <p class="case-contribution-copy">
-                Conducted unsupervised testing cycles across 15+ months of updates. Documented reproducible bug reports with step-by-step reproduction flows, classified defects by severity and player impact, and synthesized community discussions into actionable technical feedback.
+                Tested gameplay, recorded steps to reproduce issues, and categorized defects by player impact. This is independent practice, not employment by the game publisher. No public bug-report sample is linked yet.
               </p>
             </div>
           </div>
@@ -335,9 +303,9 @@
           <!-- QA Framework Breakdown (Crisp Editorial Grid) -->
           <div class="qa-editorial-grid">
             <div class="qa-editorial-card">
-              <div class="qa-card-lead">15+ Months</div>
+              <div class="qa-card-lead">Playtesting</div>
               <div class="qa-card-label">Independent Testing Cycles</div>
-              <p class="qa-card-desc">Continuous self-assigned playtesting across multiple major client patch releases.</p>
+              <p class="qa-card-desc">Self-directed checks of gameplay behavior across updates.</p>
             </div>
 
             <div class="qa-editorial-card">
@@ -354,8 +322,8 @@
 
             <div class="qa-editorial-card">
               <div class="qa-card-lead">Community</div>
-              <div class="qa-card-label">Player Sentiment Synthesis</div>
-              <p class="qa-card-desc">Translating live player feedback from regional gaming channels into concrete bug logs.</p>
+              <div class="qa-card-label">Player Feedback</div>
+              <p class="qa-card-desc">Recording player observations alongside reproducible gameplay issues.</p>
             </div>
           </div>
         </article>
@@ -365,14 +333,14 @@
           <div class="wide-feature-header">
             <div>
               <div class="case-meta-top">
-                <span class="tag">Conceptual Architecture</span>
-                <span class="tag">PRD &amp; Workflow Specification</span>
+                <span class="tag">03 · Concept / prototype</span>
+                <span class="tag">Personal project</span>
               </div>
               <h3 class="project-editorial-title">
                 NEXUS — Distributed Workflow Platform
               </h3>
               <p class="case-description">
-                A project management and workflow platform specification designed to resolve coordination drag, fragmented team communication, and missed delivery milestones for distributed operational teams.
+                A personal project exploring task management, workflow rules, and team coordination. The public repository contains a frontend prototype; production use and live integrations are not claimed.
               </p>
             </div>
 
@@ -380,77 +348,63 @@
               <div class="case-contribution-block case-contrib-spaced">
                 <h4 class="case-contribution-title">Role &amp; Deliverables</h4>
                 <p class="case-contribution-copy">
-                  Systems Architect &amp; PRD Author. Authored the comprehensive product requirements document (PRD), milestone escalation rules, and event-driven webhook architectures.
+                  Worked on the product requirements and workflow design. The repository documents the concept and includes a React / TypeScript frontend. These are project artifacts, not evidence of a deployed service or customer results.
                 </p>
               </div>
               <div>
-                <span class="tag">Academic &amp; Systems Study · PRD Available Upon Request</span>
+                <a href="https://github.com/imkshitijraj/Project-Nexus" target="_blank" rel="noopener noreferrer" class="btn-link">Explore concept repository ↗</a>
               </div>
             </div>
           </div>
 
           <div class="architecture-spec-box">
             <div class="spec-box-header">
-              <span>System Architecture Specification · Conceptual Design</span>
-              <span class="spec-version">PRD Specification</span>
+              <span>Proposed workflow · Conceptual design</span>
+              <span class="spec-version">NEXUS</span>
             </div>
             <div class="spec-box-content">
               <div class="spec-flow-step">
                 <span class="step-num">01</span>
                 <div>
                   <strong>Milestone Risk Scoring</strong>
-                  <p>Escalation logic tracking task dependency depth and team progress velocity to flag delivery risks before deadlines slip.</p>
+                  <p>Proposed checks for overdue tasks, dependencies, and milestones.</p>
                 </div>
               </div>
               <div class="spec-flow-step">
                 <span class="step-num">02</span>
                 <div>
                   <strong>Event-Driven Webhook Dispatch</strong>
-                  <p>Integration blueprint linking Slack notifications, Google Calendar schedules, and GitHub issues through verified payload webhooks.</p>
+                  <p>Proposed connections to team notification and scheduling tools. Live integrations are not verified.</p>
                 </div>
               </div>
               <div class="spec-flow-step">
                 <span class="step-num">03</span>
                 <div>
                   <strong>Cross-Functional Triage Matrix</strong>
-                  <p>Operational prioritization framework designed for distributed student and freelance teams balancing rapid iteration with delivery accountability.</p>
+                  <p>A proposed way to record issue priority, ownership, and next steps.</p>
                 </div>
               </div>
             </div>
             <div class="spec-box-caption">
-              Note: Conceptual system architecture study and product requirements specification. Full documentation available upon request.
+              Conceptual workflow summary, not a screenshot or proof of a production system. See the repository for the current project artifacts.
             </div>
           </div>
 
-          <div class="wide-feature-columns">
-            <div class="feature-pill">
-              <h4>Deadline &amp; Risk Escalations</h4>
-              <p class="feature-pill-desc">Automated reminders, approval escalation workflows, and risk scoring to alert leads before milestone slippage.</p>
-            </div>
-            <div class="feature-pill">
-              <h4>Unified Integrations</h4>
-              <p class="feature-pill-desc">Integration architecture connecting Google Calendar, Gmail, Slack, GitHub issues, and Drive through webhooks.</p>
-            </div>
-            <div class="feature-pill">
-              <h4>Phased Product Roadmap</h4>
-              <p class="feature-pill-desc">Prioritization matrix designed for cross-functional teams balancing fast iteration with operational tracking.</p>
-            </div>
-          </div>
         </article>
 
         <!-- Project 04: Compact Editorial Row (ML Financial Market Data) -->
         <article class="compact-feature-line">
-          <span class="compact-feature-domain">Technology / ML</span>
+          <span class="compact-feature-domain">04 / Technical learning</span>
           <div>
-            <h4 class="compact-feature-title">Financial Market Data Pipeline</h4>
+            <h3 class="compact-feature-title">Financial Market Data — Internship Practice</h3>
             <p class="compact-feature-desc">
-              Data cleaning pipeline and predictive machine learning models trained on financial market datasets during a technical internship at Euphoria GenX.
+              Worked with financial market datasets during a Python / machine learning internship at Euphoria GenX. Contributed to preprocessing and model evaluation, as described in my resume. No public notebook, dataset, or measured model results are linked.
             </p>
           </div>
           <div class="compact-tags-row">
             <span class="tag">Python</span>
             <span class="tag">Pandas</span>
-            <span class="tag">Supervised Models</span>
+            <span class="tag">Model Evaluation</span>
             <span class="tag">Euphoria GenX</span>
           </div>
         </article>
@@ -487,13 +441,13 @@
             <div>
               <h4 class="exp-role-heading">Student Brand Ambassador (TEC Spartans)</h4>
               <p class="exp-human-summary">
-                Representing The Esports Club across regional campuses as one of India's leading tournament and gaming entertainment organizers. I coordinate tournament activations, manage communication between tournament leads and local gaming communities, and handle live logistics and on-ground coordination during competitive match days.
+                As a Student Brand Ambassador, I support campus gaming outreach, tournament activations, player communication, and match-day logistics.
               </p>
 
               <ul class="exp-bullet-points">
                 <li>Plan and execute regional esports activations from schedule alignment to live on-ground coordination.</li>
-                <li>Serve as the primary communications link between TEC’s national tournament leads and local campus players.</li>
-                <li>Track action items and deadlines across concurrent event operations, resolving live bottlenecks in real time.</li>
+                <li>Help communicate event information to campus players.</li>
+                <li>Track action items and schedules for event activities.</li>
                 <li>Document regional participation, match outcomes, and attendee feedback to guide upcoming tournament seasons.</li>
               </ul>
             </div>
@@ -510,14 +464,14 @@
             <div>
               <h4 class="exp-role-heading">Independent Gameplay QA &amp; Community Feedback Contributor</h4>
               <p class="exp-human-summary">
-                Running an independent gameplay quality assurance workflow for Free Fire MAX India over 15+ months. I conduct systematic playtesting cycles, document reproducible bug reports with clear reproduction steps, prioritize defects by player impact, and track fixes across title updates.
+                Running an independent gameplay quality assurance workflow for Free Fire MAX India as an independent player. I conduct systematic playtesting cycles, document reproducible bug reports with clear reproduction steps, prioritize defects by player impact, and track fixes across title updates.
               </p>
 
               <ul class="exp-bullet-points">
-                <li>Executed self-directed playtesting cycles across 15+ months of updates without external supervision.</li>
-                <li>Triaged bugs by severity and impact to direct engineering focus toward high-priority gameplay blockers.</li>
-                <li>Maintained version-wise defect logs to verify patch fixes and monitor regression rates across game updates.</li>
-                <li>Synthesized player community discussions into clear, actionable technical reports for developers.</li>
+                <li>Executed self-directed playtesting cycles across game updates without external supervision.</li>
+                <li>Categorized issues by severity and player impact in independent testing notes.</li>
+                <li>Recorded observed issues across game updates and checked for recurring behavior.</li>
+                <li>Summarized player feedback alongside testing observations.</li>
               </ul>
             </div>
           </div>
@@ -527,19 +481,19 @@
             <div>
               <span class="exp-period">JUL 2025 — SEP 2025</span>
               <h3 class="exp-org">Euphoria GenX</h3>
-              <span class="exp-location">Remote · TICT · ISO 9001:2015</span>
+              <span class="exp-location">Remote</span>
             </div>
 
             <div>
               <h4 class="exp-role-heading">Intern — Machine Learning using Python</h4>
               <p class="exp-human-summary">
-                Technical internship working on financial market datasets using Python. Focused on cleaning time-series data, feature preprocessing with Pandas and NumPy, and training predictive models within a supervised engineering team.
+                A technical internship working with financial market datasets using Python, Pandas, and NumPy. My work covered data preprocessing and supervised model evaluation.
               </p>
 
               <ul class="exp-bullet-points">
                 <li>Processed and analyzed historical financial market datasets using Python, Pandas, and NumPy.</li>
-                <li>Trained and evaluated supervised machine learning models to forecast market data trends.</li>
-                <li>Developed practical foundation in data pipelines, feature engineering, and model validation standards.</li>
+                <li>Supported feature preprocessing and supervised model evaluation.</li>
+                <li>Practiced data preparation and model validation.</li>
               </ul>
             </div>
           </div>
@@ -571,7 +525,7 @@
             <span class="domain-order">01 / Operations</span>
             <h3 class="domain-heading">Esports &amp; Gaming Operations</h3>
             <p class="domain-paragraph">
-              Planning competitive tournaments, aligning broadcast schedules, and building engaged player communities. Bridging the gap between major esports organizers and regional grassroots talent.
+              Tournament coordination, player communication, and campus gaming outreach. My focus is on clear schedules and practical support during events.
             </p>
             <div class="domain-caps-list">
               <span class="tag">Tournament Execution</span>
@@ -599,7 +553,7 @@
             <span class="domain-order">03 / Community &amp; Events</span>
             <h3 class="domain-heading">Community &amp; Event Delivery</h3>
             <p class="domain-paragraph">
-              End-to-end event coordination, timeline management, and stakeholder alignment. Demonstrated experience delivering campus initiatives and fests for hundreds of attendees on strict calendar schedules.
+              Campus event coordination, timeline tracking, and communication between contributors. Keeping tasks, event information, and next steps clear.
             </p>
             <div class="domain-caps-list">
               <span class="tag">Milestone Management</span>
@@ -649,7 +603,7 @@
           <div class="about-credentials-frame">
             <div class="cred-header">
               <span class="kr-monogram" aria-hidden="true">KR</span>
-              <span class="cred-title">Verified Roles &amp; Focus</span>
+              <span class="cred-title">Roles &amp; Focus</span>
             </div>
             <div class="cred-body">
               <div class="cred-item">
@@ -697,10 +651,7 @@
                 <div class="fact-title">Studies</div>
                 <div class="fact-value">BCA (2023–2027)</div>
               </div>
-              <div>
-                <div class="fact-title">Languages</div>
-                <div class="fact-value">English, Hindi, Bengali</div>
-              </div>
+
             </div>
           </div>
 
@@ -721,7 +672,7 @@
           <span class="section-kicker">Education &amp; Background</span>
           <h2 class="section-title">Education &amp; training.</h2>
           <p class="section-description">
-            Academic qualifications and recognized industry simulations supporting my practical work.
+            Current undergraduate study supporting my work in technology and operations.
           </p>
         </div>
 
@@ -736,63 +687,8 @@
                 <span class="cred-sub">Techno International New Town, Kolkata</span>
                 <span class="cred-date">2023 – 2027 (Expected)</span>
               </div>
-              <div class="cred-item">
-                <span class="cred-name">Class XII — Senior Secondary</span>
-                <span class="cred-sub">Swarajaya Senior Secondary School · NWAC Board (78%)</span>
-                <span class="cred-date">2023</span>
-              </div>
-              <div class="cred-item">
-                <span class="cred-name">Class X — Secondary School</span>
-                <span class="cred-sub">De Nobili School, Chandrapura · ICSE Board (78%)</span>
-                <span class="cred-date">2021</span>
-              </div>
             </div>
           </div>
-
-          <!-- Column 2: Certifications & Training -->
-          <div>
-            <h3 class="cred-column-head">Simulations &amp; Training</h3>
-            <div class="cred-entries">
-              <div class="cred-item">
-                <span class="cred-name">Project Management Job Simulation</span>
-                <span class="cred-sub">Accenture North America · Forage</span>
-                <span class="cred-date">Nov 2024</span>
-              </div>
-              <div class="cred-item">
-                <span class="cred-name">Quantitative Master Math Course</span>
-                <span class="cred-sub">GMAT Focus · Udemy</span>
-                <span class="cred-date">May 2026</span>
-              </div>
-              <div class="cred-item">
-                <span class="cred-name">Python, CSS &amp; JavaScript Specializations</span>
-                <span class="cred-sub">Modular Coursework · Udemy</span>
-                <span class="cred-date">2024</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 3: Honors & Workshops -->
-          <div>
-            <h3 class="cred-column-head">Honors &amp; Workshops</h3>
-            <div class="cred-entries">
-              <div class="cred-item">
-                <span class="cred-name">AI vs Human Debate Contest</span>
-                <span class="cred-sub">Remarkable Performance · Critical Argument</span>
-                <span class="cred-date">Dec 2025</span>
-              </div>
-              <div class="cred-item">
-                <span class="cred-name">PRABUDDHA 2026 Tech-A-Thon</span>
-                <span class="cred-sub">Inter-College Technical Competition</span>
-                <span class="cred-date">Apr 2026</span>
-              </div>
-              <div class="cred-item">
-                <span class="cred-name">Kolkata Entrepreneurship Workshop</span>
-                <span class="cred-sub">Startup Operations &amp; Unit Economics</span>
-                <span class="cred-date">Jan 2026</span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
       </div>
@@ -820,7 +716,7 @@
                 <span class="contact-link-label">Email</span>
                 <div class="contact-value-row">
                   <a href="mailto:kshitij.raj.96@gmail.com" class="contact-link-value">kshitij.raj.96@gmail.com</a>
-                  <button class="copy-button copy-trigger" data-copy="kshitij.raj.96@gmail.com" title="Copy email address">
+                  <button class="copy-button copy-trigger" data-copy="kshitij.raj.96@gmail.com" title="Copy email address" aria-label="Copy email address">
                     Copy
                   </button>
                 </div>
@@ -829,14 +725,14 @@
               <div class="contact-link-row">
                 <span class="contact-link-label">LinkedIn</span>
                 <a href="https://linkedin.com/in/imkshitijraj" target="_blank" rel="noopener noreferrer" class="contact-link-value">
-                  linkedin.com/in/imkshitijraj <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+                  linkedin.com/in/imkshitijraj <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>
                 </a>
               </div>
 
               <div class="contact-link-row">
                 <span class="contact-link-label">GitHub</span>
                 <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" class="contact-link-value">
-                  github.com/imkshitijraj <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+                  github.com/imkshitijraj <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>
                 </a>
               </div>
 
@@ -853,20 +749,20 @@
 
             <div>
               <a href="./assets/Kshitij-Raj-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <i class="ri-file-pdf-line" aria-hidden="true"></i> View Resume (PDF) ↗
+                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 13h8M8 17h5"/></svg> View Resume (PDF) ↗
               </a>
             </div>
           </div>
 
           <!-- Minimal Direct Message Box -->
           <div class="minimal-form-box">
-            <h3 class="minimal-form-title">Send a direct message</h3>
-            <p class="minimal-form-subtitle">
-              Or drop a note here for a quick response.
+            <h3 class="minimal-form-title">Write a message</h3>
+            <p class="minimal-form-subtitle" id="form-help">
+              No form service is configured yet. You can prepare an email below or email me directly.
             </p>
 
-            <form class="minimal-form" id="contact-form" novalidate>
-              <div id="form-alert" class="form-feedback-alert" role="alert"></div>
+            <form class="minimal-form" id="contact-form" novalidate aria-describedby="form-help">
+              <div id="form-alert" class="form-feedback-alert" role="status" aria-live="polite" aria-atomic="true"></div>
 
               <div class="form-group">
                 <label for="user-name">Your Name</label>
@@ -875,12 +771,12 @@
                   id="user-name" 
                   name="name" 
                   class="form-control-input" 
-                  placeholder="e.g. Alex Mercer" 
+                  placeholder="Your name" 
                   required 
                   autocomplete="name"
                   aria-describedby="user-name-error"
                 >
-                <span id="user-name-error" class="form-field-error" role="alert">Please enter your name.</span>
+                <span id="user-name-error" class="form-field-error" >Please enter your name.</span>
               </div>
 
               <div class="form-group">
@@ -895,7 +791,7 @@
                   autocomplete="email"
                   aria-describedby="user-email-error"
                 >
-                <span id="user-email-error" class="form-field-error" role="alert">Please enter a valid email address.</span>
+                <span id="user-email-error" class="form-field-error" >Please enter a valid email address.</span>
               </div>
 
               <div class="form-group">
@@ -908,12 +804,14 @@
                   required
                   aria-describedby="user-message-error"
                 ></textarea>
-                <span id="user-message-error" class="form-field-error" role="alert">Please enter a message.</span>
+                <span id="user-message-error" class="form-field-error" >Please enter a message.</span>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-submit-form" id="submit-btn">
-                Send Message <i class="ri-send-plane-fill" aria-hidden="true"></i>
+              <button type="submit" class="btn btn-primary btn-submit-form" id="submit-btn" disabled>
+                Prepare Email <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m3 3 18 9-18 9 3-9Zm3 9h15"/></svg>
               </button>
+              <a id="email-fallback" class="btn-link" href="mailto:kshitij.raj.96@gmail.com">Email me directly ↗</a>
+              <noscript><p>The form needs JavaScript to prepare your draft. Please use the email link above.</p></noscript>
             </form>
           </div>
 
@@ -944,13 +842,13 @@
 
       <div class="footer-social-links">
         <a href="https://linkedin.com/in/imkshitijraj" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-          <i class="ri-linkedin-fill" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 9v11M5 4v1M10 20V9m0 5c0-6 9-6 9 0v6"/></svg>
         </a>
         <a href="https://github.com/imkshitijraj" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-          <i class="ri-github-fill" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M9 20c-4 1-4-2-6-2m12 4v-4c0-1-.3-2-1-2 4-.5 6-2 6-6 0-1-.5-2-1-3 .3-1 .3-2 0-3-2 0-3 1-4 1a13 13 0 0 0-6 0C8 5 7 4 5 4c-.3 1-.3 2 0 3-.5 1-1 2-1 3 0 4 2 5.5 6 6-.7 0-1 1-1 2v4"/></svg>
         </a>
         <a href="mailto:kshitij.raj.96@gmail.com" aria-label="Email Kshitij Raj">
-          <i class="ri-mail-line" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg>
         </a>
       </div>
     </div>

@@ -3,7 +3,8 @@
  * Lightweight, accessible, production-ready vanilla JavaScript
  */
 
-// Production contact form endpoint (Formspree, Web3Forms, Netlify Forms, etc.)
+// HTTPS endpoint accepting JSON { name, email, message } with CORS for this site.
+// A 2xx response must mean the provider accepted the submission. No secrets here.
 // Leave empty ("") to provide an honest direct mailto fallback without fake success states.
 const FORM_ENDPOINT = "";
 
@@ -13,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initClipboardCopy();
   initContactForm();
-  initPrintTriggers();
 });
 
 /* ==========================================================================
@@ -24,7 +24,7 @@ function initTheme() {
   const themeIcon = document.getElementById('theme-icon');
   if (!toggleBtn || !themeIcon) return;
 
-  const savedTheme = localStorage.getItem('kr_site_theme') || 'dark';
+  const savedTheme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
 
@@ -32,17 +32,17 @@ function initTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('kr_site_theme', newTheme);
+    try { localStorage.setItem('kr_site_theme', newTheme); } catch { /* Theme still works without storage. */ }
     updateThemeIcon(newTheme);
   });
 
   function updateThemeIcon(theme) {
     if (theme === 'light') {
-      themeIcon.className = 'ri-sun-line';
+      themeIcon.innerHTML = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>';
       toggleBtn.setAttribute('aria-label', 'Switch to dark theme');
       toggleBtn.setAttribute('title', 'Switch to dark theme');
     } else {
-      themeIcon.className = 'ri-moon-line';
+      themeIcon.innerHTML = '<path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/>';
       toggleBtn.setAttribute('aria-label', 'Switch to light theme');
       toggleBtn.setAttribute('title', 'Switch to light theme');
     }
@@ -55,97 +55,100 @@ function initTheme() {
 function initMobileMenu() {
   const toggleBtn = document.getElementById('mobile-toggle');
   const drawer = document.getElementById('mobile-drawer');
-  const mobileIcon = document.getElementById('mobile-icon');
-  if (!toggleBtn || !drawer) return;
+  const closeBtn = document.getElementById('drawer-close');
+  if (!toggleBtn || !drawer || !closeBtn) return;
+  const desktop = window.matchMedia('(min-width: 1201px)');
+  const background = [...document.body.children].filter(el =>
+    el !== drawer && !['SCRIPT', 'STYLE'].includes(el.tagName));
+  const previousInert = new Map();
+  let open = false;
 
-  function setMenuState(open) {
+  function setMenuState(next, returnFocus = true) {
+    if (open === next) return;
+    open = next;
     drawer.classList.toggle('open', open);
     toggleBtn.setAttribute('aria-expanded', String(open));
     drawer.setAttribute('aria-hidden', String(!open));
-
+    document.body.classList.toggle('menu-open', open);
     if (open) {
-      toggleBtn.setAttribute('aria-label', 'Close navigation menu');
-      if (mobileIcon) mobileIcon.className = 'ri-close-line';
-      document.body.style.overflow = 'hidden';
-
-      // Move focus into first focusable item in drawer
-      const firstFocusable = drawer.querySelector('a, button');
-      if (firstFocusable) firstFocusable.focus();
+      background.forEach(el => { previousInert.set(el, el.inert); el.inert = true; });
+      closeBtn.focus();
     } else {
-      toggleBtn.setAttribute('aria-label', 'Open navigation menu');
-      if (mobileIcon) mobileIcon.className = 'ri-menu-line';
-      document.body.style.overflow = '';
-      toggleBtn.focus();
+      background.forEach(el => { el.inert = previousInert.get(el) || false; });
+      previousInert.clear();
+      if (returnFocus) toggleBtn.focus();
     }
   }
 
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = drawer.classList.contains('open');
-    setMenuState(!isOpen);
-  });
-
-  // Close when pressing Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+  toggleBtn.addEventListener('click', () => setMenuState(true));
+  closeBtn.addEventListener('click', () => setMenuState(false));
+  drawer.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
       setMenuState(false);
+    } else if (e.key === 'Tab') {
+      const focusable = [...drawer.querySelectorAll('a[href], button:not([disabled])')];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
     }
   });
-
-  // Close when clicking mobile links
-  const links = drawer.querySelectorAll('.mobile-nav-link, .print-trigger');
-  links.forEach(link => {
+  document.addEventListener('focusin', e => {
+    if (open && !drawer.contains(e.target)) closeBtn.focus();
+  });
+  drawer.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      setMenuState(false);
+      const href = link.getAttribute('href');
+      if (href.startsWith('#')) {
+        setMenuState(false, false);
+        const target = document.querySelector(href);
+        if (target) { target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); }
+      } else setMenuState(false);
     });
   });
-
-  // Reset drawer state on window resize past tablet breakpoint
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 992 && drawer.classList.contains('open')) {
-      setMenuState(false);
+  desktop.addEventListener('change', () => {
+    if (desktop.matches && open) {
+      setMenuState(false, false);
+      document.querySelector('.header-brand-link').focus();
     }
-  }, { passive: true });
+  });
 }
 
 /* ==========================================================================
    3. SCROLL SPY (Synchronizes active nav links on desktop & mobile)
    ========================================================================== */
 function initScrollSpy() {
-  const sections = document.querySelectorAll('section[id]');
-  const desktopLinks = document.querySelectorAll('.nav-link');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  const sections = [...document.querySelectorAll('section[id]')];
+  const links = document.querySelectorAll('.nav-link, .mobile-nav-link');
   if (!sections.length) return;
-
   let ticking = false;
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveLinks();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
   function updateActiveLinks() {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(sec => {
-      const sectionHeight = sec.offsetHeight;
-      const sectionTop = sec.offsetTop - 140;
-      const sectionId = sec.getAttribute('id');
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        desktopLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
-        });
-        mobileLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
-        });
-      }
+    let active = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= 145) active = section;
+    }
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+      active = sections[sections.length - 1];
+    }
+    links.forEach(link => {
+      const current = link.getAttribute('href') === `#${active.id}`;
+      link.classList.toggle('active', current);
+      if (current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
+    ticking = false;
   }
+  function scheduleUpdate() {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateActiveLinks); }
+  }
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  window.addEventListener('load', updateActiveLinks, { once: true });
+  updateActiveLinks();
 }
 
 /* ==========================================================================
@@ -194,127 +197,85 @@ function initContactForm() {
   const alertBox = document.getElementById('form-alert');
   const submitBtn = document.getElementById('submit-btn');
   if (!form || !alertBox || !submitBtn) return;
+  const fallback = document.getElementById('email-fallback');
+  const fields = ['user-name', 'user-email', 'user-message'].map(id => ({
+    input: document.getElementById(id), error: document.getElementById(`${id}-error`)
+  }));
+  const endpoint = FORM_ENDPOINT.trim();
+  let submitting = false;
+  submitBtn.disabled = false;
+  submitBtn.textContent = endpoint ? 'Send Message' : 'Prepare Email';
+  if (endpoint) document.getElementById('form-help').textContent =
+    'Send a message through the form, or email me directly.';
 
-  const nameInput = form.querySelector('#user-name');
-  const emailInput = form.querySelector('#user-email');
-  const messageInput = form.querySelector('#user-message');
-  const nameError = document.getElementById('user-name-error');
-  const emailError = document.getElementById('user-email-error');
-  const messageError = document.getElementById('user-message-error');
+  fields.forEach(({ input, error }) => input.addEventListener('input', () => {
+    input.removeAttribute('aria-invalid');
+    error.classList.remove('active');
+    alertBox.className = 'form-feedback-alert';
+    alertBox.textContent = '';
+    fallback.href = 'mailto:kshitij.raj.96@gmail.com';
+    fallback.textContent = 'Email me directly ↗';
+  }));
 
-  // Clear validation flags and field errors on input
-  [
-    { input: nameInput, err: nameError },
-    { input: emailInput, err: emailError },
-    { input: messageInput, err: messageError }
-  ].forEach(({ input, err }) => {
-    if (!input) return;
-    input.addEventListener('input', () => {
-      input.removeAttribute('aria-invalid');
-      if (err) err.classList.remove('active');
-    });
-  });
-
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-
-    // Reset error messages
-    if (nameError) nameError.classList.remove('active');
-    if (emailError) emailError.classList.remove('active');
-    if (messageError) messageError.classList.remove('active');
-
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value.trim() : '';
-    const message = messageInput ? messageInput.value.trim() : '';
-
-    // Field-level validation
-    if (!name) {
-      if (nameInput) {
-        nameInput.setAttribute('aria-invalid', 'true');
-        nameInput.focus();
-      }
-      if (nameError) nameError.classList.add('active');
-      showAlert('Please enter your name.', 'error');
+    if (submitting) return;
+    let firstInvalid = null;
+    fields.forEach(({ input, error }) => {
+      const invalid = !input.value.trim() || (input.type === 'email' && !input.validity.valid);
+      input.setAttribute('aria-invalid', String(invalid));
+      error.classList.toggle('active', invalid);
+      if (invalid && !firstInvalid) firstInvalid = input;
+    });
+    if (firstInvalid) {
+      showAlert('Please check the highlighted fields.', 'error');
+      firstInvalid.focus();
       return;
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
-      if (emailInput) {
-        emailInput.setAttribute('aria-invalid', 'true');
-        emailInput.focus();
-      }
-      if (emailError) emailError.classList.add('active');
-      showAlert('Please enter a valid email address.', 'error');
+    const [name, email, message] = fields.map(({ input }) => input.value.trim());
+    fallback.href = `mailto:kshitij.raj.96@gmail.com?subject=${encodeURIComponent('Inquiry from ' + name)}&body=${encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')')}`;
+    fallback.textContent = 'Open email draft ↗';
+    if (!endpoint) {
+      showAlert('No form service is configured yet. Nothing has been sent. Use “Open email draft” below to send this message in your email app.', 'info');
       return;
     }
-
-    if (!message) {
-      if (messageInput) {
-        messageInput.setAttribute('aria-invalid', 'true');
-        messageInput.focus();
-      }
-      if (messageError) messageError.classList.add('active');
-      showAlert('Please write a message before sending.', 'error');
-      return;
-    }
-
-    // Honest handling: If no backend service is configured, do NOT fake a submission.
-    if (!FORM_ENDPOINT || FORM_ENDPOINT.trim() === '') {
-      showAlert(
-        'No automated form endpoint is configured yet. Please email me directly at kshitij.raj.96@gmail.com or click below to compose.',
-        'info'
-      );
-      // Pre-fill mailto draft
-      const mailtoUrl = `mailto:kshitij.raj.96@gmail.com?subject=${encodeURIComponent('Inquiry from ' + name)}&body=${encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')')}`;
-      window.location.href = mailtoUrl;
-      return;
-    }
-
-    // Real POST request to configured endpoint
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = 'Sending...';
+    submitting = true;
     submitBtn.disabled = true;
-
+    submitBtn.textContent = 'Sending…';
+    form.setAttribute('aria-busy', 'true');
+    fields.forEach(({ input }) => { input.readOnly = true; });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
     try {
-      const response = await fetch(FORM_ENDPOINT, {
+      const url = new URL(endpoint);
+      if (url.protocol !== 'https:') throw new Error('An HTTPS form endpoint is required.');
+      const response = await fetch(url, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({ name, email, message })
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+        signal: controller.signal
       });
-
-      if (response.ok) {
-        form.reset();
-        showAlert('Thank you! Your message was delivered successfully. I will get back to you shortly.', 'success');
-      } else {
-        showAlert('Form service returned an error. Please email me directly at kshitij.raj.96@gmail.com.', 'error');
-      }
-    } catch (err) {
-      showAlert('Network error while dispatching form. Please email me directly at kshitij.raj.96@gmail.com.', 'error');
+      if (!response.ok) throw new Error('Submission was not accepted.');
+      form.reset();
+      fields.forEach(({ input }) => input.removeAttribute('aria-invalid'));
+      fallback.href = 'mailto:kshitij.raj.96@gmail.com';
+      fallback.textContent = 'Email me directly ↗';
+      showAlert('Your message was accepted by the form service. Thank you for getting in touch.', 'success');
+    } catch (error) {
+      showAlert(error.name === 'AbortError'
+        ? 'The request timed out. Delivery could not be confirmed. Your message is still here; you can send it by email.'
+        : 'Delivery could not be confirmed. Your message is still here; please use the email link below.', 'error');
     } finally {
-      submitBtn.innerHTML = originalText;
+      clearTimeout(timeout);
+      submitting = false;
       submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+      form.removeAttribute('aria-busy');
+      fields.forEach(({ input }) => { input.readOnly = false; });
     }
   });
-
   function showAlert(text, type) {
     alertBox.textContent = text;
     alertBox.className = `form-feedback-alert ${type}`;
   }
-}
-
-/* ==========================================================================
-   6. PRINT / PDF TRIGGERS
-   ========================================================================== */
-function initPrintTriggers() {
-  const triggers = document.querySelectorAll('.print-trigger');
-  triggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.print();
-    });
-  });
 }

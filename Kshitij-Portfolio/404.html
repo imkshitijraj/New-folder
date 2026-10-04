@@ -3,91 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="noindex, nofollow">
   
-  <!-- Anti-Flash Theme Initializer -->
-  <script>
-    (function() {
-      var savedTheme = localStorage.getItem('kr_site_theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+  <script src="/New-folder/Kshitij-Portfolio/assets/js/theme-init.js"></script>
 
   <title>Page Not Found (404) — Kshitij Raj</title>
   <meta name="description" content="The requested page could not be found. Return to Kshitij Raj's portfolio.">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/New-folder/Kshitij-Portfolio/assets/favicon.svg">
   
-  <!-- Typography & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+  <!-- Deployment-relative assets also work on nested missing URLs. -->
+  <link rel="stylesheet" href="/New-folder/Kshitij-Portfolio/assets/css/style.css">
+  
 
-  <!-- Root-Relative Stylesheet -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  
-  <style>
-    .not-found-wrap {
-      min-height: calc(100vh - var(--header-height) - 120px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 5rem 0;
-    }
-    .not-found-badge {
-      margin-bottom: 1.5rem;
-    }
-    .not-found-num {
-      font-size: clamp(5rem, 14vw, 8.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      font-family: var(--font-display);
-    }
-    .not-found-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-    .not-found-desc {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      max-width: 520px;
-      line-height: 1.6;
-      margin-bottom: 2.25rem;
-    }
-    .not-found-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .header-btn-return {
-      padding: 0.45rem 1rem;
-      font-size: 0.85rem;
-    }
-  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand-wrap">
+      <div class="header-brand">
         <span class="kr-monogram" aria-hidden="true">KR</span>
-        <a href="/" class="brand-name">KSHITIJ RAJ</a>
+        <a href="/New-folder/Kshitij-Portfolio/" class="brand-name">KSHITIJ RAJ</a>
       </div>
       <div class="header-actions">
-        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle light/dark theme">
-          <i class="ri-moon-line theme-icon-dark" aria-hidden="true"></i>
-          <i class="ri-sun-line theme-icon-light" aria-hidden="true"></i>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="icon" id="theme-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg>
         </button>
-        <a href="/" class="btn btn-secondary header-btn-return">
+        <a href="/New-folder/Kshitij-Portfolio/" class="btn btn-secondary header-btn-return">
           Return to Home
         </a>
       </div>
@@ -95,18 +39,18 @@
   </header>
 
   <!-- 404 Main Content -->
-  <main class="container not-found-wrap" id="main-content">
+  <main class="container not-found-wrap" id="main-content" tabindex="-1">
     <span class="tag not-found-badge">Error 404</span>
     <div class="not-found-num">404</div>
     <h1 class="not-found-title">Page not found</h1>
     <p class="not-found-desc">
-      The page or artefact you're looking for doesn't exist, has moved, or has not yet been published. Return to the homepage to explore verified work, credentials, and contact details.
+      The page or artefact you're looking for doesn't exist, has moved, or has not yet been published. Return to the homepage to explore projects, background, and contact details.
     </p>
     <div class="not-found-actions">
-      <a href="/" class="btn btn-primary">
-        Back to Home <i class="ri-arrow-right-line" aria-hidden="true"></i>
+      <a href="/New-folder/Kshitij-Portfolio/" class="btn btn-primary">
+        Back to Home <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
       </a>
-      <a href="/#contact" class="btn btn-secondary">
+      <a href="/New-folder/Kshitij-Portfolio/#contact" class="btn btn-secondary">
         Contact Me
       </a>
     </div>
@@ -119,24 +63,10 @@
         <span class="kr-monogram" aria-hidden="true">KR</span>
         <span>Kshitij Raj © 2026 · Kolkata, India</span>
       </div>
-      <a href="/" class="footer-link">Home</a>
+      <a href="/New-folder/Kshitij-Portfolio/" class="btn-link">Home</a>
     </div>
   </footer>
 
-  <!-- Theme Toggle Controller -->
-  <script>
-    (function() {
-      const toggleBtn = document.getElementById('theme-toggle-btn');
-      if (!toggleBtn) return;
-      toggleBtn.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', nextTheme);
-        try {
-          localStorage.setItem('kr_site_theme', nextTheme);
-        } catch(e) {}
-      });
-    })();
-  </script>
+  <script src="/New-folder/Kshitij-Portfolio/assets/js/main.js" defer></script>
 </body>
 </html>
